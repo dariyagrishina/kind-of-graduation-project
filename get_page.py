@@ -13,18 +13,20 @@ def get_page(url):
     return content
 
 
-#if len(sys.argv) < 2:
-#    print "\nUSAGE: python get_page.py <page-url>\n"
-#    sys.exit(1)
-#else:
-#    print get_page(sys.argv[1])
-
-
 def get_title(film_number):
-    page_content = get_page("http://www.kinopoisk.ru/film"+str(film_number)+"/")
+    page_content = get_page("http://www.kinopoisk.ru/film" + str(film_number) + "/")
+
     title_beginn = page_content.find("<title>")
     title_end = page_content.find("</title>", title_beginn)
     title = page_content[title_beginn + 7:title_end]
-    return title
+    title = title.decode('cp1251')
+    title = title.encode("utf8")
+    return title # получился, на самом деле, совсем не фильм, но ввиду блокировки не могу дальше практиковаться
 
-print get_title(401)
+
+
+if len(sys.argv) < 2:
+    print "\nUSAGE: python get_page.py <page-url>\n"
+    sys.exit(1)
+else:
+    print get_title(sys.argv[1])
