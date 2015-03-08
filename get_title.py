@@ -4,18 +4,11 @@
 
 import sys
 import urllib
-
-
-def get_page(url):
-    page = urllib.urlopen(url)
-    content_cp1251 = page.read()
-    content = content_cp1251.decode('cp1251')
-    page.close()
-    return content
+import mymodule
 
 
 def get_title(film_number):
-    page_content = get_page("http://www.filmz.ru/film/%s/" % film_number)
+    page_content = mymodule.get_page("http://www.filmz.ru/film/%s/" % film_number)
     title_begin = page_content.find("<title>Filmz.ru")
     title_end = page_content.find("(", title_begin)
     title = page_content[title_begin + 17:title_end]
