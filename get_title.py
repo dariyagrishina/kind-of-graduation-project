@@ -1,14 +1,11 @@
-#!/usr/bin/python -tt
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
-
-
 import sys
-import urllib
-import mymodule
+import utils
 
 
 def get_title(film_number):
-    page_content = mymodule.get_page("http://www.filmz.ru/film/%s/" % film_number)
+    page_content = utils.get_page("http://www.filmz.ru/film/%s/" % film_number)
     title_begin = page_content.find("<title>Filmz.ru")
     title_end = page_content.find("(", title_begin)
     title = page_content[title_begin + 17:title_end]

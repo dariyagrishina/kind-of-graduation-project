@@ -1,14 +1,11 @@
-#!/usr/bin/python -tt
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
-
-
 import sys
-import urllib
-import mymodule
+import utils
 
 
 if len(sys.argv) < 2:
     print "\nUSAGE: python get_page.py <page-url>\n"
     sys.exit(1)
 else:
-    print mymodule.get_page(sys.argv[1])
+    print utils.get_page(sys.argv[1])
