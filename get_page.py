@@ -3,7 +3,7 @@
 
 
 import sys
-import urllib
+import urllib # R: это не нужно
 import mymodule
 
 
