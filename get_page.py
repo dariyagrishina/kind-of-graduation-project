@@ -14,16 +14,8 @@ def get_page(url):
     return content
 
 
-def get_title(film_number):
-    page_content = get_page("http://www.filmz.ru/film/%s/" % film_number)
-    title_begin = page_content.find("<title>Filmz.ru")
-    title_end = page_content.find("(", title_begin)
-    title = page_content[title_begin + 17:title_end]
-    return title
-
-
 if len(sys.argv) < 2:
     print "\nUSAGE: python get_page.py <page-url>\n"
     sys.exit(1)
 else:
-    print get_title(sys.argv[1])
+    print get_page(sys.argv[1])
