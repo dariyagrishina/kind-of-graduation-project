@@ -3,6 +3,7 @@
 import sys
 import utils
 
+
 def get_title(film_number):
     page_content = utils.get_page("http://www.filmz.ru/film/%s/" % film_number)
     title_begin = page_content.find("<title>Filmz.ru")
