@@ -3,41 +3,33 @@
 <!--Monday-->
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# profile: http://ogp.me/ns/profile#">
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1251"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UQcGWF5XGwADXFRSDgA="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(5),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(f){"stack"in f&&(t(1),t(4),"addEventListener"in window&&t(2),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(3),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:8,2:5,3:9,4:7,5:20,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],4:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(2);t("loader").features.stn=!0,t(1),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:6,2:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:20,2:21,ee:"QJf3ax",gos:"7eSDFh"}],6:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:21,2:20,ee:"QJf3ax"}],7:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:21,2:20,ee:"QJf3ax"}],8:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:21,2:20,ee:"QJf3ax"}],9:[function(t,e){function n(){c.inPlace(this,d,"fn-")}function r(t,e){c.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}var i=t("ee").create(),a=t(1),s=t(2),c=s(i),f=s(a),u=window.XMLHttpRequest,d=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=i,window.XMLHttpRequest=function(t){var e=new u(t);try{i.emit("new-xhr",[],e),f.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{i.emit("internal-error",[r])}catch(o){}}return e},window.XMLHttpRequest.prototype=u.prototype,c.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),i.on("send-xhr-start",r),i.on("open-xhr-start",r)},{1:5,2:21,ee:"QJf3ax"}],10:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=e(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=e(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var u=0;c>u;u++)n.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:11,3:9,4:5,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],11:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&c&&c.body){p.proto="https"===d.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=c.createElement("script");e.src=p.proto+t.agent,c.body.appendChild(e)}}function r(){"complete"===c.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,c=s.document,f="addEventListener",u="attachEvent",d=(""+location).split("?")[0],p=e.exports={offset:i(),origin:d,features:{}};c[f]?(c[f]("DOMContentLoaded",o,!1),s[f]("load",n,!1)):(c[u]("onreadystatechange",r),s[u]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],20:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],21:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:20,ee:"QJf3ax"}]},{},["G9z0Bl",3,10,4]);</script>
-<title>Filmz.ru  Афера Томаса Крауна (1999) фильм  дата выхода (Афёра Томаса Крауна) Thomas Crown Affair, The      </title>
-<meta name="title" content="Filmz.ru:  Афера Томаса Крауна (1999) фильм  дата выхода (Афёра Томаса Крауна) Thomas Crown Affair, The      ">
-<META name="description" content=" фильм Афера Томаса Крауна Thomas Crown Affair, The  (Афёра Томаса Крауна)  Thomas Crown Affair, The У любителя острых ощущений и мультимиллионера Томаса Крауна дела идут как по маслу. Тогда он и решается вложить свой богатый опыт в похищение... актеры  Пирс Броснан,  Рене Руссо,  Денис Лири,  Бен Газзара,  Фэй Дануэй,  Фриц Уивер,  Джордж Кристи,  Джеймс Саито,  Ричи Костер,  Фрэнки Фэйзон,  Марк Марголис; режиссер  Джон МакТирнан; сценарий  Лесли Диксон,  Курт Виммер; саундтрек  Мишель Легран,   Стинг; продюсеры  Пирс Броснан,  Бо Клэр,  Майкл Тэдросс">
-<META name="keywords" content="     фильм Афера Томаса Крауна  Thomas Crown Affair, The,  США  криминальный, романтический, триллер кадры, плакаты, постеры, ролики, официальный сайт,       ,   Афёра Томаса Крауна мнения зрителей  Пирс Броснан,  Рене Руссо,  Денис Лири,  Бен Газзара,  Фэй Дануэй,  Фриц Уивер,  Джордж Кристи,  Джеймс Саито,  Ричи Костер,  Фрэнки Фэйзон,  Марк Марголис,  Джон МакТирнан,  Лесли Диксон,  Курт Виммер,  Мишель Легран,   Стинг,  Пирс Броснан,  Бо Клэр,  Майкл Тэдросс, ">
+<title>Filmz.ru  Ноттинг Хилл (1999) фильм  дата выхода Notting Hill      </title>
+<meta name="title" content="Filmz.ru:  Ноттинг Хилл (1999) фильм  дата выхода Notting Hill      ">
+<META name="description" content=" фильм Ноттинг Хилл Notting Hill   Notting Hill Анна Скотт &mdash; самая знаменитая кинозвезда в мире. Она живет в Беверли-Хиллз, получает умопомрачительные гонорары и часто демонстрирует вспышки... актеры  Джулия Робертс,  Хью Грант,  Миша Бартон,  Хью Бонневиль,  Эмили Мортимер,  Эмма Чэмберс,  Алек Болдуин,  Джо Корниш,  Рис Ивэнс,  Генри Гудман,  Джина МакКи,  Саймон Каллоу,  Сэмюэль Уэст,  Мэттью Модайн,  Дилан Моран; режиссер  Роджер Мичелл; сценарий  Ричард Кертис; саундтрек  Ронан Китинг,  Эндрю Ллойд Уэббер; продюсеры  Тим Биван,  Дункан Кенворти,  Ричард Кертис,  Эрик Феллнер">
+<META name="keywords" content="     фильм Ноттинг Хилл  Notting Hill,  США, Великобритания  комедия, романтический кадры, плакаты, постеры, ролики, официальный сайт,       ,    мнения зрителей  Джулия Робертс,  Хью Грант,  Миша Бартон,  Хью Бонневиль,  Эмили Мортимер,  Эмма Чэмберс,  Алек Болдуин,  Джо Корниш,  Рис Ивэнс,  Генри Гудман,  Джина МакКи,  Саймон Каллоу,  Сэмюэль Уэст,  Мэттью Модайн,  Дилан Моран,  Роджер Мичелл,  Ричард Кертис,  Ронан Китинг,  Эндрю Ллойд Уэббер,  Тим Биван,  Дункан Кенворти,  Ричард Кертис,  Эрик Феллнер, ">
 <META http-equiv="Content-Style-Type" content="text/css">
 <META name="robots" content="all">
 <META name="revisit-after" content="1 days">
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:site" content="@filmzru">
-	<meta property="og:title" content='Афера Томаса Крауна, Thomas Crown Affair, The, Афёра Томаса Крауна (1999)'>
-	<meta property="og:description" content="У любителя острых ощущений и мультимиллионера Томаса Крауна дела идут как по маслу. Тогда он и решается вложить свой богатый опыт в похищение бесценной картины. По дерзкому замыслу, кража происходит средь бела дня из тщательно охраняемого музея на Манхэттене. Именно поэтому соблазнительной... режиссер  Джон МакТирнан; актеры  Пирс Броснан,  Рене Руссо,  Денис Лири,  Бен Газзара,  Фэй Дануэй,  Фриц Уивер,  Джордж Кристи,  Джеймс Саито,  Ричи Костер,  Фрэнки Фэйзон,  Марк Марголис; сценарий  Лесли Диксон,  Курт Виммер; саунтрек  Мишель Легран,   Стинг; продюсеры  Пирс Броснан,  Бо Клэр,  Майкл Тэдросс">
+	<meta property="og:title" content='Ноттинг Хилл, Notting Hill (1999)'>
+	<meta property="og:description" content="Анна Скотт &mdash; самая знаменитая кинозвезда в мире. Она живет в Беверли-Хиллз, получает умопомрачительные гонорары и часто демонстрирует вспышки темперамента, которыми прикрывает свои переживания по поводу преследований таблоидной прессы, ревности, дружка и неуверенности в себе... Случайно... режиссер  Роджер Мичелл; актеры  Джулия Робертс,  Хью Грант,  Миша Бартон,  Хью Бонневиль,  Эмили Мортимер,  Эмма Чэмберс,  Алек Болдуин,  Джо Корниш,  Рис Ивэнс,  Генри Гудман,  Джина МакКи,  Саймон Каллоу,  Сэмюэль Уэст,  Мэттью Модайн,  Дилан Моран; сценарий  Ричард Кертис; саунтрек  Ронан Китинг,  Эндрю Ллойд Уэббер; продюсеры  Тим Биван,  Дункан Кенворти,  Ричард Кертис,  Эрик Феллнер">
 	<meta property="fb:admins" content="pervoptiz">
 	<meta property="admins" content="pervoptiz">
-	<meta property="og:image" content='http://media.filmz.ru/photos/small/s_31968.jpg'>
+	<meta property="og:image" content='http://media.filmz.ru/photos/small/s_138505.jpg'>
 
-<meta property="og:url" content='http://www.filmz.ru/film/17/'>
+<meta property="og:url" content='http://www.filmz.ru/film/18/'>
 	<meta property="og:site_name" content='Filmz.ru'>
-<meta property="og:type" content='movie'>
-	<meta property="fb:app_id" content="217906348234490">
-	<meta property="og:image" content='http://media.filmz.ru/players/img_4565.jpg'>
-	<link rel="video_src" href="http://media.filmz.ru/soft/jwplayer_4_6/jwplayer.swf?file=&autostart=true&cid=4565&config=http://media.filmz.ru/configs/4565.xml">
-	<meta property="og:video" content='http://media.filmz.ru/soft/jwplayer_4_6/jwplayer.swf?file=&autostart=true&cid=4565&config=http://media.filmz.ru/configs/4565.xml'>
-	<meta property="og:video:height" name="video_height" content="240">
-	<meta property="og:video:height" name="video_width" content="420">
-	<meta property="og:video:type" name="video_type" content="application/x-shockwave-flash">
+<meta property="og:type" content='article'>
 
-
-<link rel="handheld" href="http://wap.filmz.ru/film/17/" type="text/css">
+<link rel="handheld" href="http://wap.filmz.ru/film/18/" type="text/css">
 
 <link rel="icon" href="http://www.filmz.ru/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="http://www.filmz.ru/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon-precomposed" media="screen and (resolution: 163dpi)" href="http://filmz.ru/apple-touch-icon.png">
 <link rel="apple-touch-icon-precomposed" media="screen and (resolution: 132dpi)" href="http://filmz.ru/apple-touch-icon-ipad.png">
 <link rel="apple-touch-icon-precomposed" media="screen and (resolution: 326dpi)" href="http://filmz.ru/apple-touch-icon-retina.png">
-<link rel="image_src" href="http://media.filmz.ru/photos/small/s_31968.jpg">
+<link rel="image_src" href="http://media.filmz.ru/photos/small/s_138505.jpg">
 
 <link href="/css/css_std_2013_metro/style_std_2012.css?ver=114" rel="stylesheet" type="text/css">
 
@@ -81,7 +73,6 @@ ul.bottom1col, ul.bottom2col {color:#fff;}
 <script type="text/javascript" src="/js/release.js?v=2"></script>
 <script type="text/javascript" src="/js/modal-photo.js"></script>
 
-<script type="text/javascript" src="http://media.filmz.ru/soft/jwplayer_4_6/jwplayer.js"></script>
 
 
 <base target="_top">
@@ -149,7 +140,7 @@ document.getElementById('loginframe2').children[0].style.height = document.getEl
 </script>
 
 
-<script>srequr="/film/17/";</script>
+<script>srequr="/film/18/";</script>
 
 <div id="topuserline_b"></div>
 <div id="topuserline_inner">
@@ -172,14 +163,14 @@ document.getElementById('loginframe2').children[0].style.height = document.getEl
 <center>
         		<div style="z-index:10;">
 <script type="text/javascript" src="/js/banner_zone1.js"></script>
-<noscript><a href='http://b.filmz.ru/presentation/www/delivery/ck.php?n=aec2aeab&amp;cb=60' target='_blank'><img src='http://b.filmz.ru/presentation/www/delivery/avw.php?zoneid=1&amp;cb=91&amp;n=aec2aeab' border='0' alt='' /></a></noscript>
+<noscript><a href='http://b.filmz.ru/presentation/www/delivery/ck.php?n=aec2aeab&amp;cb=48' target='_blank'><img src='http://b.filmz.ru/presentation/www/delivery/avw.php?zoneid=1&amp;cb=50&amp;n=aec2aeab' border='0' alt='' /></a></noscript>
 </div>
 <div class="clr"></div></center>
 		</div>
 		<div class="topbanner xwide">
 <center>
         		<div style="z-index:10;"><script type="text/javascript" src="/js/banner_zone8.js"></script>
-<noscript><a href='http://b.filmz.ru/presentation/www/delivery/ck.php?n=aec2aeab&amp;cb=49' target='_blank'><img src='http://b.filmz.ru/presentation/www/delivery/avw.php?zoneid=8&amp;cb=96&amp;n=aec2aeab' border='0' alt='' /></a></noscript>
+<noscript><a href='http://b.filmz.ru/presentation/www/delivery/ck.php?n=aec2aeab&amp;cb=58' target='_blank'><img src='http://b.filmz.ru/presentation/www/delivery/avw.php?zoneid=8&amp;cb=52&amp;n=aec2aeab' border='0' alt='' /></a></noscript>
 </div>
 <div class="clr"></div></center>
 		</div>
@@ -190,7 +181,7 @@ document.getElementById('loginframe2').children[0].style.height = document.getEl
 <div id="floater">
 <div class="floater-anchor"></div>
 <div class="floater-content">
-                <div id="logo_n_search"><a rel="home" href="/"><span class="fll filmzrutoplogo120" title="Filmz.ru:  Афера Томаса Крауна (1999) фильм  дата выхода (Афёра Томаса Крауна) Thomas Crown Affair, The      "></span></a><div class="fll search_form mt20" id="nb_search"><form rel="search" action="http://www.filmz.ru/search/" method="GET" name="search_form" id="navbar-form"><input type="text" name="search" maxlength="70" аutocomplete="off" value="" placeholder="поиск по сайту" id="navbar-query" style="padding:6px;" class="mainsearch"><select style="padding:6px;width:80px;" name="where_search" onchange="suggestionsearch_dropdown_choice(this);"><option value="all">Везде</option><option value="articles">Статьи</option><option value="films">Фильмы</option><option value="movies">Кинотеатры</option><option value="persons">Персоны</option><option value="blogs">Блоги</option><option value="articles_texts">В текстах статей</option><option value="status">Мысли</option><option value="events">События</option><option value="comments">Комментарии</option><option value="tops">ТОПы по теме</option></select><input type="submit" style="margin:0 5px;" class="buttonstyle" value="Найти"></form><div id="navbar-suggestionsearch"></div></div><div class="mt20 mr5 flr"><a target=_blank href='http://feeds.feedburner.com/filmzru/'><span class="icon32x5 rss" title="rss"></span></a><div class="clear"></div></div></div>
+                <div id="logo_n_search"><a rel="home" href="/"><span class="fll filmzrutoplogo120" title="Filmz.ru:  Ноттинг Хилл (1999) фильм  дата выхода Notting Hill      "></span></a><div class="fll search_form mt20" id="nb_search"><form rel="search" action="http://www.filmz.ru/search/" method="GET" name="search_form" id="navbar-form"><input type="text" name="search" maxlength="70" аutocomplete="off" value="" placeholder="поиск по сайту" id="navbar-query" style="padding:6px;" class="mainsearch"><select style="padding:6px;width:80px;" name="where_search" onchange="suggestionsearch_dropdown_choice(this);"><option value="all">Везде</option><option value="articles">Статьи</option><option value="films">Фильмы</option><option value="movies">Кинотеатры</option><option value="persons">Персоны</option><option value="blogs">Блоги</option><option value="articles_texts">В текстах статей</option><option value="status">Мысли</option><option value="events">События</option><option value="comments">Комментарии</option><option value="tops">ТОПы по теме</option></select><input type="submit" style="margin:0 5px;" class="buttonstyle" value="Найти"></form><div id="navbar-suggestionsearch"></div></div><div class="mt20 mr5 flr"><a target=_blank href='http://feeds.feedburner.com/filmzru/'><span class="icon32x5 rss" title="rss"></span></a><div class="clear"></div></div></div>
 
 
                 <nav><ul id="newmenu"><li class="smwide"><a href="/">главное</a><div class="dropdown_1column align_left"><div class="col_1"><ul class="fs10 fix200"><li class="tags">выбрать главную страницу</li><li><a href="/?skin=default">выбор редакции</a></li><li><a href="/?skin=news">новости</a></li><li><a href="/?skin=kinomanka">киноманка</a></li><li><a href="/?skin=club">киноклуб НК</a></li></ul></div></div></li><li><a href="/news/">новости</a><div class="dropdown_1column align_left"><div class="col_1"><ul class="fs10 fix200"><li><a href="/pub/1/">новостная лента</a></li><li><a href="/kinomanka/">киноманка</a></li><li><a href="/pub/2/">статьи</a></li><li><a href="/toppoteme/">топы и спецпроекты</a></li><li><a href="/photos/">кадры и постеры</a></li><li><a href="http://viy3d.filmz.ru/">Вий 3D: Спецпроект</a></li><li><a href="http://mars.filmz.ru/">Марсианин 3D: Спецпроект</a></li><li><a href="/people/">база киноперсон</a></li><li><a href="/people/?sort=new">новые люди в базе</a></li></ul></div></div></li><li><a href="/films/">фильмы</a><div class="dropdown_1column align_left"><div class="col_1"><ul class="fs10 fix200"><li><a href="/films/#topfilms">самые популярные</a></li><li><a href="/films/rates/">популярные (списком)</a></li><li><a href="/films/?sort=new">новые в базе</a></li><li><a href="/comments/statistics/films/">самые обсуждаемые</a></li><li><a href="/pub/7/">рецензии на кино</a></li><li><a href="/pub/14/">рецензии на Blu-Ray/DVD</a></li></ul></div></div></li><li><a href="/series/">сериалы</a><div class="dropdown_1column align_left"><div class="col_1"><ul class="fs10 fix200"><li><a href="/series/">популярные сериалы</a></li><li><a href="/series/?mode=new">новые сериалы</a></li><li><a href="/pub/2/?tags=158">обзоры сериалов</a></li></ul></div></div></li><li><a href="/videos/">видео</a></li><li class="smwide"><a href="/blogs/">блоги</a></li><li class="smwide"><a href="/releases/">график кинопроката</a><div class="dropdown_1column align_left"><div class="col_1"><ul class="fs10 fix175"><li><a href="/releases/russia/">Россия и СНГ</a></li><li><a href="/releases/usa/">США</a></li></ul></div></div></li><li class="smwide"><a href="/afisha/">киноафиша</a></li><li class="smwide"><a href="/boxoffice/">кинокасса</a><div class="dropdown_1column align_left"><div class="col_1"><ul class="fs10 fix200"><li><a href="/boxoffice/statistics/">лучшие старты России</a></li><li><a href="/boxoffice/weekends/russia/">бокс-офис России</a></li><li><a href="/boxoffice/weekends/usa/">бокс-офис США</a></li></ul></div></div></li><!-- li class="wide"><a href="/pub/73/">спецпроекты</a></li><li class="wide"><a href="/comments/">сегодня обсуждают</a></li --><li class="smwide"><a href="/club/">киноклуб НК</a><div class="dropdown_1column align_left"><div class="col_1"><ul class="fs10 fix200"><li><a href="/club/statuses/">мысли читателей</a></li><li><a href="/club/comments_today/">сегодня обсуждают</a></li><li><a href="/club/reviews/">читательские рецензии</a></li><li><a href="/battles/">кинобитвы</a></li><li><a href="/club/userquizes/">опросы</a></li><li><a href="/club/quizes/">викторины</a></li><li><a href="/moviegoers/">рейтинг НК-читателей</a></li></ul></div></div></li><li class="menu_right smwide"><a href="/feedback/">контакты</a><div class="dropdown_1column align_right"><div class="col_1"><ul class="fs10 fix200"><li><a href="/pub/10/3450_1.htm">размещение рекламы</a></li><li><a href="/projects/">работы web-студии</a></li><li><a href="/pub/18/">архивы журнала</a></li><li><a href="/help/">НК-помощник</a></li></ul></div></div></li></ul></nav><div class="clr"></div>
@@ -204,11 +195,11 @@ document.getElementById('loginframe2').children[0].style.height = document.getEl
 
 <noindex>
 <div class="noprint banner997120 xslim"><script type="text/javascript" src="/js/banner_zone2.js"></script>
-<noscript><a href='http://b.filmz.ru/presentation/www/delivery/ck.php?n=aec2aeab&amp;cb=70' target='_blank'><img src='http://b.filmz.ru/presentation/www/delivery/avw.php?zoneid=2&amp;cb=67&amp;n=aec2aeab' border='0' alt='' /></a></noscript>
+<noscript><a href='http://b.filmz.ru/presentation/www/delivery/ck.php?n=aec2aeab&amp;cb=77' target='_blank'><img src='http://b.filmz.ru/presentation/www/delivery/avw.php?zoneid=2&amp;cb=81&amp;n=aec2aeab' border='0' alt='' /></a></noscript>
 
 </div>
 <div class="noprint banner997120 xwide" style="background-color:#000;"><center><script type="text/javascript" src="/js/banner_zone5.js"></script>
-<noscript><a href='http://b.filmz.ru/presentation/www/delivery/ck.php?n=aec2aeab&amp;cb=38' target='_blank'><img src='http://b.filmz.ru/presentation/www/delivery/avw.php?zoneid=5&amp;cb=96&amp;n=aec2aeab' border='0' alt='' /></a></noscript>
+<noscript><a href='http://b.filmz.ru/presentation/www/delivery/ck.php?n=aec2aeab&amp;cb=54' target='_blank'><img src='http://b.filmz.ru/presentation/www/delivery/avw.php?zoneid=5&amp;cb=40&amp;n=aec2aeab' border='0' alt='' /></a></noscript>
 
 </center></div>
 </noindex>
@@ -230,26 +221,29 @@ document.getElementById('loginframe2').children[0].style.height = document.getEl
 	<div class="content br5">
 
 
-  <meta itemprop="contentRating" content="MPAA R"><meta itemprop="dateCreated" content="1999">
+  <meta itemprop="contentRating" content="MPAA PG-13"><meta itemprop="dateCreated" content="1999">
 
-		<meta itemprop="datePublished" content="1999-08-06">		<meta itemprop="productionCompany" content="Metro-Goldwyn-Mayer (MGM)">
-		<meta itemprop="duration" content="P113M">
+						<meta itemprop="productionCompany" content="Союз">
+				<meta itemprop="datePublished" content="1999-05-28">		<meta itemprop="productionCompany" content="Universal Pictures">
+		
   <meta itemprop="inLanguage" content="ru">
   <meta itemprop="isFamilyFriendly" content="True">
 
 	<div class="text">
 	
 <div class="flr">
-			<!-- span class="item"><a rel="nofollow" href="/film/17/?favorites=yes"><span class="icon16l0 anchoricon" title="Добавить в любимые"></span> Добавить в любимые</a></span -->
-		<div class="favinfo"><a rel="nofollow" href="/film/17/?favorites=yes"><span class="linkinfo">Добавить в любимые</span> <span class="icon32fav notmylovelg" title="Добавить в любимые"></span></a></div>
+			<!-- span class="item"><a rel="nofollow" href="/film/18/?favorites=yes"><span class="icon16l0 anchoricon" title="Добавить в любимые"></span> Добавить в любимые</a></span -->
+		<div class="favinfo"><a rel="nofollow" href="/film/18/?favorites=yes"><span class="linkinfo">Добавить в любимые</span> <span class="icon32fav notmylovelg" title="Добавить в любимые"></span></a></div>
 	</div>
 
 
 	
-		<h1><span title="Афера Томаса Крауна, Thomas Crown Affair, The, Афёра Томаса Крауна" itemprop="name">Афера Томаса Крауна</span> <span class="grey">(1999)</span></h1>
-		<h4><span itemprop="alternativeHeadline">Thomas Crown Affair, The</span></h4>
-<div class="tags"><b><a href=/releases/week.html?country=usa&type=theater&date=06.08.1999>06.08.1999</a></b>
-в кинотеатраx (США) <i>113 мин.</i> <b>Metro-Goldwyn-Mayer (MGM)</b></div>
+		<h1><span title="Ноттинг Хилл, Notting Hill" itemprop="name">Ноттинг Хилл</span> <span class="grey">(1999)</span></h1>
+		<h4><span itemprop="alternativeHeadline">Notting Hill</span></h4>
+<div class="tags"><b>без даты (TBA)</b>
+в кинотеатраx (Россия)  <b>Союз</b></div>
+<div class="tags"><b><a href=/releases/week.html?country=usa&type=theater&date=28.05.1999>28.05.1999</a></b>
+в кинотеатраx (США)  <b>Universal Pictures</b></div>
 
 	
 		
@@ -263,7 +257,7 @@ document.getElementById('loginframe2').children[0].style.height = document.getEl
                 <dt class="selected bl">о фильме</dt>
                 <dd class="selected">
 	            <div class="tab-content">
-			<p itemprop="description">У любителя острых ощущений и мультимиллионера Томаса Крауна дела идут как по маслу. Тогда он и решается вложить свой богатый опыт в похищение бесценной картины. По дерзкому замыслу, кража происходит средь бела дня из тщательно охраняемого музея на Манхэттене. Именно поэтому соблазнительной женщине &mdash; инспектору страховой компании Кэтрин Бэннинг, приступившей к розыску произведения искусства, приходится применить все возможные средства &mdash; от сыскного интеллекта, хитрости и авантюризма до личной привлекательности. Чем дальше она искусно заманивает Крауна в рискованную игру, тем ближе он подходит к роковому повороту своей судьбы.</p>			
+			<p itemprop="description">Анна Скотт &mdash; самая знаменитая кинозвезда в мире. Она живет в Беверли-Хиллз, получает умопомрачительные гонорары и часто демонстрирует вспышки темперамента, которыми прикрывает свои переживания по поводу преследований таблоидной прессы, ревности, дружка и неуверенности в себе... Случайно зайдя в книжный магазин, она влюбляется в неудачливого торговца книгами по туризму Уильяма Такера.</p>			
 			
 			
 
@@ -277,24 +271,24 @@ document.getElementById('loginframe2').children[0].style.height = document.getEl
 		
 			<li>
 		<span class="name">режиссер</span>
-		<span class="item">		<a itemprop="director" title=" Джон МакТирнан" alt=" Джон МакТирнан" href=/person/75/>Джон МакТирнан</a>						</span>
+		<span class="item">		<a itemprop="director" title=" Роджер Мичелл" alt=" Роджер Мичелл" href=/person/79/>Роджер Мичелл</a>						</span>
 		</li>
 	
 			<li>
 		<span class="name">сценарий</span>
-		<span class="item">		<a title=" Лесли Диксон" alt=" Лесли Диксон" href=/person/6709/>Лесли Диксон</a>, 				<a title=" Курт Виммер" alt=" Курт Виммер" href=/person/2967/>Курт Виммер</a>						</span>
+		<span class="item">		<a title=" Ричард Кертис" alt=" Ричард Кертис" href=/person/3103/>Ричард Кертис</a>						</span>
 		</li>
 	
 			<li>
 		<span class="name">в ролях</span>
-		<span class="item">		<a itemprop="actor" title=" Пирс Броснан" alt=" Пирс Броснан" href=/person/12/>Пирс Броснан</a>, 				<a itemprop="actor" title=" Рене Руссо" alt=" Рене Руссо" href=/person/76/>Рене Руссо</a>, 				<a itemprop="actor" title=" Денис Лири" alt=" Денис Лири" href=/person/77/>Денис Лири</a>, 				<a itemprop="actor" title=" Бен Газзара" alt=" Бен Газзара" href=/person/78/>Бен Газзара</a>, 				<a itemprop="actor" title=" Фэй Дануэй" alt=" Фэй Дануэй" href=/person/10/>Фэй Дануэй</a>, 				<a itemprop="actor" title=" Фриц Уивер" alt=" Фриц Уивер" href=/person/10995/>Фриц Уивер</a>, 				<a href="/film/17/people/"><i>и другие...</i></a>		</span>
+		<span class="item">		<a itemprop="actor" title=" Джулия Робертс" alt=" Джулия Робертс" href=/person/40/>Джулия Робертс</a>, 				<a itemprop="actor" title=" Хью Грант" alt=" Хью Грант" href=/person/80/>Хью Грант</a>, 				<a itemprop="actor" title=" Миша Бартон" alt=" Миша Бартон" href=/person/4369/>Миша Бартон</a>, 				<a itemprop="actor" title=" Хью Бонневиль" alt=" Хью Бонневиль" href=/person/1619/>Хью Бонневиль</a>, 				<a itemprop="actor" title=" Эмили Мортимер" alt=" Эмили Мортимер" href=/person/3633/>Эмили Мортимер</a>, 				<a itemprop="actor" title=" Эмма Чэмберс" alt=" Эмма Чэмберс" href=/person/82/>Эмма Чэмберс</a>, 				<a href="/film/18/people/"><i>и другие...</i></a>		</span>
 		</li>
 	
 	
 	
 			<li class="last">
 		<span class="name">продюсеры</span>
-		<span class="item">		<a itemprop="producer" title=" Пирс Броснан" alt=" Пирс Броснан" href=/person/12/>Пирс Броснан</a>, 				<a itemprop="producer" title=" Бо Клэр" alt=" Бо Клэр" href=/person/7843/>Бо Клэр</a>, 				<a itemprop="producer" title=" Майкл Тэдросс" alt=" Майкл Тэдросс" href=/person/10527/>Майкл Тэдросс</a>						</span>
+		<span class="item">		<a itemprop="producer" title=" Тим Биван" alt=" Тим Биван" href=/person/5639/>Тим Биван</a>, 				<a itemprop="producer" title=" Дункан Кенворти" alt=" Дункан Кенворти" href=/person/5641/>Дункан Кенворти</a>, 				<a itemprop="producer" title=" Ричард Кертис" alt=" Ричард Кертис" href=/person/3103/>Ричард Кертис</a>, 				<a itemprop="producer" title=" Эрик Феллнер" alt=" Эрик Феллнер" href=/person/5640/>Эрик Феллнер</a>						</span>
 		</li>
 		</ul>
 
@@ -305,22 +299,22 @@ document.getElementById('loginframe2').children[0].style.height = document.getEl
 
 <div class="inform br5">
 
-<h2 title="кадры из фильма Афера Томаса Крауна">кадры из фильма</h2>
+<h2 title="кадры из фильма Ноттинг Хилл">кадры из фильма</h2>
 
 
 <div id="motioncontainer" class="ml10 mr10" style="position:relative;height:90px;overflow:hidden;">
 	<div id="motiongallery" style="position:absolute;left:0;top:0;white-space: nowrap;height:90px;">
 	<nobr id="trueContainer">
-                    <a href="/photos/109914/big/" class="photoboxstarter" title="кадр №109914 из фильма Афера Томаса Крауна" itemprop="thumbnailUrl"><img alt="кадр №109914 из фильма Афера Томаса Крауна" src="http://media.filmz.ru/photos/small/filmz.ru_s_109914.jpg" itemprop="image" align=middle class="mr5" height=90></a>
-                    <a href="/photos/109912/big/" class="photoboxstarter" title="кадр №109912 из фильма Афера Томаса Крауна" itemprop="thumbnailUrl"><img alt="кадр №109912 из фильма Афера Томаса Крауна" src="http://media.filmz.ru/photos/small/filmz.ru_s_109912.jpg" itemprop="image" align=middle class="mr5" height=90></a>
-                    <a href="/photos/109911/big/" class="photoboxstarter" title="кадр №109911 из фильма Афера Томаса Крауна" itemprop="thumbnailUrl"><img alt="кадр №109911 из фильма Афера Томаса Крауна" src="http://media.filmz.ru/photos/small/filmz.ru_s_109911.jpg" itemprop="image" align=middle class="mr5" height=90></a>
-                    <a href="/photos/19083/big/" class="photoboxstarter" title="кадр №19083 из фильма Афера Томаса Крауна" itemprop="thumbnailUrl"><img alt="кадр №19083 из фильма Афера Томаса Крауна" src="http://media.filmz.ru/photos/small/filmz.ru_s_19083.jpg" itemprop="image" align=middle class="mr5" height=90></a>
-                    <a href="/photos/19082/big/" class="photoboxstarter" title="кадр №19082 из фильма Афера Томаса Крауна" itemprop="thumbnailUrl"><img alt="кадр №19082 из фильма Афера Томаса Крауна" src="http://media.filmz.ru/photos/small/filmz.ru_s_19082.jpg" itemprop="image" align=middle class="mr5" height=90></a>
-                    <a href="/photos/19081/big/" class="photoboxstarter" title="кадр №19081 из фильма Афера Томаса Крауна" itemprop="thumbnailUrl"><img alt="кадр №19081 из фильма Афера Томаса Крауна" src="http://media.filmz.ru/photos/small/filmz.ru_s_19081.jpg" itemprop="image" align=middle class="mr5" height=90></a>
-                    <a href="/photos/19080/big/" class="photoboxstarter" title="кадр №19080 из фильма Афера Томаса Крауна" itemprop="thumbnailUrl"><img alt="кадр №19080 из фильма Афера Томаса Крауна" src="http://media.filmz.ru/photos/small/filmz.ru_s_19080.jpg" itemprop="image" align=middle class="mr5" height=90></a>
-                    <a href="/photos/19079/big/" class="photoboxstarter" title="кадр №19079 из фильма Афера Томаса Крауна" itemprop="thumbnailUrl"><img alt="кадр №19079 из фильма Афера Томаса Крауна" src="http://media.filmz.ru/photos/small/filmz.ru_s_19079.jpg" itemprop="image" align=middle class="mr5" height=90></a>
-                    <a href="/photos/19078/big/" class="photoboxstarter" title="кадр №19078 из фильма Афера Томаса Крауна" itemprop="thumbnailUrl"><img alt="кадр №19078 из фильма Афера Томаса Крауна" src="http://media.filmz.ru/photos/small/filmz.ru_s_19078.jpg" itemprop="image" align=middle class="mr5" height=90></a>
-                    <a href="/photos/19077/big/" class="photoboxstarter" title="кадр №19077 из фильма Афера Томаса Крауна" itemprop="thumbnailUrl"><img alt="кадр №19077 из фильма Афера Томаса Крауна" src="http://media.filmz.ru/photos/small/filmz.ru_s_19077.jpg" itemprop="image" align=middle class="mr5" height=90></a>
+                    <a href="/photos/138521/big/" class="photoboxstarter" title="кадр №138521 из фильма Ноттинг Хилл" itemprop="thumbnailUrl"><img alt="кадр №138521 из фильма Ноттинг Хилл" src="http://media.filmz.ru/photos/small/filmz.ru_s_138521.jpg" itemprop="image" align=middle class="mr5" height=90></a>
+                    <a href="/photos/138520/big/" class="photoboxstarter" title="кадр №138520 из фильма Ноттинг Хилл" itemprop="thumbnailUrl"><img alt="кадр №138520 из фильма Ноттинг Хилл" src="http://media.filmz.ru/photos/small/filmz.ru_s_138520.jpg" itemprop="image" align=middle class="mr5" height=90></a>
+                    <a href="/photos/138519/big/" class="photoboxstarter" title="кадр №138519 из фильма Ноттинг Хилл" itemprop="thumbnailUrl"><img alt="кадр №138519 из фильма Ноттинг Хилл" src="http://media.filmz.ru/photos/small/filmz.ru_s_138519.jpg" itemprop="image" align=middle class="mr5" height=90></a>
+                    <a href="/photos/138518/big/" class="photoboxstarter" title="кадр №138518 из фильма Ноттинг Хилл" itemprop="thumbnailUrl"><img alt="кадр №138518 из фильма Ноттинг Хилл" src="http://media.filmz.ru/photos/small/filmz.ru_s_138518.jpg" itemprop="image" align=middle class="mr5" height=90></a>
+                    <a href="/photos/138517/big/" class="photoboxstarter" title="кадр №138517 из фильма Ноттинг Хилл" itemprop="thumbnailUrl"><img alt="кадр №138517 из фильма Ноттинг Хилл" src="http://media.filmz.ru/photos/small/filmz.ru_s_138517.jpg" itemprop="image" align=middle class="mr5" height=90></a>
+                    <a href="/photos/138516/big/" class="photoboxstarter" title="кадр №138516 из фильма Ноттинг Хилл" itemprop="thumbnailUrl"><img alt="кадр №138516 из фильма Ноттинг Хилл" src="http://media.filmz.ru/photos/small/filmz.ru_s_138516.jpg" itemprop="image" align=middle class="mr5" height=90></a>
+                    <a href="/photos/138515/big/" class="photoboxstarter" title="кадр №138515 из фильма Ноттинг Хилл" itemprop="thumbnailUrl"><img alt="кадр №138515 из фильма Ноттинг Хилл" src="http://media.filmz.ru/photos/small/filmz.ru_s_138515.jpg" itemprop="image" align=middle class="mr5" height=90></a>
+                    <a href="/photos/138514/big/" class="photoboxstarter" title="кадр №138514 из фильма Ноттинг Хилл" itemprop="thumbnailUrl"><img alt="кадр №138514 из фильма Ноттинг Хилл" src="http://media.filmz.ru/photos/small/filmz.ru_s_138514.jpg" itemprop="image" align=middle class="mr5" height=90></a>
+                    <a href="/photos/138513/big/" class="photoboxstarter" title="кадр №138513 из фильма Ноттинг Хилл" itemprop="thumbnailUrl"><img alt="кадр №138513 из фильма Ноттинг Хилл" src="http://media.filmz.ru/photos/small/filmz.ru_s_138513.jpg" itemprop="image" align=middle class="mr5" height=90></a>
+                    <a href="/photos/138512/big/" class="photoboxstarter" title="кадр №138512 из фильма Ноттинг Хилл" itemprop="thumbnailUrl"><img alt="кадр №138512 из фильма Ноттинг Хилл" src="http://media.filmz.ru/photos/small/filmz.ru_s_138512.jpg" itemprop="image" align=middle class="mr5" height=90></a>
         	</nobr>
 	<div class="clr"></div>
 	</div>
@@ -351,18 +345,22 @@ document.getElementById('loginframe2').children[0].style.height = document.getEl
 <div class="inform br5">
 
 
-<h2><a title="кассовые сборы фильма Афера Томаса Крауна" href="/film/17/boxoffice/">Кассовые сборы и бюджет</a></h2>
+<h2><a title="кассовые сборы фильма Ноттинг Хилл" href="/film/18/boxoffice/">Кассовые сборы и бюджет</a></h2>
 
 <ul class="release3col">
 
 		<li>
-			<span title="69,305,181 $" class="number"><a href="http://boxofficemojo.com/movies/?id=thomascrownaffair.htm">69.31 млн $</a></span>
-			<span title="кассовые сборы фильма Афера Томаса Крауна в США" class="item">сборы в США</span>
+			<span title="116,089,678 $" class="number"><a href="http://boxofficemojo.com/movies/?id=nottinghill.htm">116.09 млн $</a></span>
+			<span title="кассовые сборы фильма Ноттинг Хилл в США" class="item">сборы в США</span>
 		</li>
 
 
-
-
+		<li>
+		<span title="550,000 $" class="number"><a href="">
+				550 тыс. $
+		</a></span>
+		<span  title="кассовые сборы фильма Ноттинг Хилл в России" class="item">сборы в России</span>
+		</li>
 
 
 </ul>
@@ -370,15 +368,19 @@ document.getElementById('loginframe2').children[0].style.height = document.getEl
 <ul class="release3col">
 
 			<li class="first">
-		<span title="124.31 млн $" class="number"><a href="http://boxofficemojo.com/movies/?id=thomascrownaffair.htm">124 305 181 $</a></span>
+		<span title="363.89 млн $" class="number"><a href="http://boxofficemojo.com/movies/?id=nottinghill.htm">363 889 678 $</a></span>
 		<span class="item">мировые сборы</span>
 		</li>
 	
 			<li class="first">
-		<span title="48,000,000 $" class="number"><a href="http://boxofficemojo.com/movies/?id=thomascrownaffair.htm">48 млн $</a></span>
+		<span title="42,000,000 $" class="number"><a href="http://boxofficemojo.com/movies/?id=nottinghill.htm">42 млн $</a></span>
 		<span class="item">заявленный бюджет</span>
 		</li>
-		
+				<li class="first">
+		<span title="22,400,000 $" class="number"><a href="">22.4 млн $</a></span>
+		<span class="item">маркетинговый бюджет</span>
+		</li>
+	
 </ul>
 
 </div>
@@ -408,18 +410,18 @@ border:none !important;
                 <td align=center valign=top>
 								<a href="/boxoffice/usa/1999/39/">39/1999</a>
 								</td>
-                <td>7</td>
+                <td>23</td>
 
                 <td nowrap align=right valign=top>
-                    <b>969 007</b>
+                    <b>103 235</b>
                 </td>
 
                 <td align=right valign=top>
-                    1405                </td>
+                    222                </td>
                 <td align=right width=40px>
                                     </td>
 
-                <td align=right>690</td>
+                <td align=right>465</td>
                 <td align=right width=40px>
                                     </td>
                                    <td align="center"><font size=2>
@@ -469,7 +471,7 @@ comments_service["count_comments"] = "0";
 comments_service["count_pages"] = "0"; 
 comments_service["current_page"] = "1"; 
 comments_service["category"] = "films"; 
-comments_service["article_id"] = 17; 
+comments_service["article_id"] = 18; 
 comments_service["comment_id"] = "0"; 
 comments_service["user_login"] = 0; 
 comments_service["error"] = "error_none";
@@ -535,7 +537,7 @@ document.getElementById('is_review').style.display='none';
 	<textarea placeholder="Поделитесь впечатлениями о фильме. Выражая свое мнение, не забывайте, пожалуйста, о правилах приличия" name="text" style="width: 600px;" rows="2" id="comment_reply_form_textarea_0" style="padding:5px;margin:0 10px 5px;" class="comment_reply_form_textarea" onclick="document.getElementById('comment_reply_form_textarea_0').style.height='100px';document.getElementById('comment_reply_form_0_bbcode').style.display='block';"></textarea>
 	<input value="0" name="parent_id" id="comment_reply_form_0_input_parent" type="hidden">
 	<input value="films" name="category" id="comment_reply_form_0_input_category" type="hidden">
-	<input value="17" name="article_id" id="comment_reply_form_0_input_article" type="hidden">
+	<input value="18" name="article_id" id="comment_reply_form_0_input_article" type="hidden">
 	<div class="tags">Перед публикацией отзыва, пройдите, пожалуйста, процедуру <a href="/moviegoers/registration/">регистрации на <b>filmz.ru</b></a>, или войдите в свой профиль на сайте, воспользовавшись формой вверху экрана.</div>
 
 	
@@ -571,16 +573,16 @@ function responseDeleteMyFilmNote(result){
 
 <div class="clear" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
 
-<div class="quota fll br5"><div class="item"><span class="itemicon20 mr5 fll artcomment"></span><a title="мнения зрителей о фильме Афера Томаса Крауна" class="fullink" href="/film/17/comments/">
+<div class="quota fll br5"><div class="item"><span class="itemicon20 mr5 fll artcomment"></span><a title="мнения зрителей о фильме Ноттинг Хилл" class="fullink" href="/film/18/comments/">
 <span itemprop="reviewCount">0</span> комментариев</a></div></div>
 
 
 	<div class="flr">
-        <a href='#' nofollow onclick="javascript:window.open('http://vkontakte.ru/share.php?url=http://filmz.ru/film/17/',null,'height=650,width=640,status=yes,toolbar=no,menubar=no,location=no, resizable=yes, scrollbars=yes '); return false;"><span class="icon32x5 vksin" title="ВКонтакте"></span></a>
-        <a target="_blank" nofollow  href="http://connect.mail.ru/share?share_url=http://filmz.ru/film/17/"><span class="icon32x5 mmmsin" title="В Мой Мир"></span></a>
-        <a href='#' nofollow  onclick="javascript:window.open('http://www.facebook.com/sharer.php?u=http://filmz.ru/film/17/',null,'height=650,width=640,status=yes,toolbar=no,menubar=no,location=no, resizable=yes, scrollbars=yes '); return false;"><span class="icon32x5 facesin" title="в facebook"></span></a>
-	<a target=_blank nofollow href='http://www.livejournal.com/update.bml?event=<img%20align=left%20hspace=10%20vspace=10%20src="http://media.filmz.ru/photos/small/s_31968.jpg"><p>%D0%A3+%D0%BB%D1%8E%D0%B1%D0%B8%D1%82%D0%B5%D0%BB%D1%8F+%D0%BE%D1%81%D1%82%D1%80%D1%8B%D1%85+%D0%BE%D1%89%D1%83%D1%89%D0%B5%D0%BD%D0%B8%D0%B9+%D0%B8+%D0%BC%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D0%BC%D0%B8%D0%BB%D0%BB%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%D0%B0+%D0%A2%D0%BE%D0%BC%D0%B0%D1%81%D0%B0+%D0%9A%D1%80%D0%B0%D1%83%D0%BD%D0%B0+%D0%B4%D0%B5%D0%BB%D0%B0+%D0%B8%D0%B4%D1%83%D1%82+%D0%BA%D0%B0%D0%BA+%D0%BF%D0%BE+%D0%BC%D0%B0%D1%81%D0%BB%D1%83.+%D0%A2%D0%BE%D0%B3%D0%B4%D0%B0+%D0%BE%D0%BD+%D0%B8+%D1%80%D0%B5%D1%88%D0%B0%D0%B5%D1%82%D1%81%D1%8F+%D0%B2%D0%BB%D0%BE%D0%B6%D0%B8%D1%82%D1%8C+%D1%81%D0%B2%D0%BE%D0%B9+%D0%B1%D0%BE%D0%B3%D0%B0%D1%82%D1%8B%D0%B9+%D0%BE%D0%BF%D1%8B%D1%82+%D0%B2+%D0%BF%D0%BE%D1%85%D0%B8%D1%89%D0%B5%D0%BD%D0%B8%D0%B5+%D0%B1%D0%B5%D1%81%D1%86%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9+%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D1%8B.+%D0%9F%D0%BE+%D0%B4%D0%B5%D1%80%D0%B7%D0%BA%D0%BE%D0%BC%D1%83+%D0%B7%D0%B0%D0%BC%D1%8B%D1%81%D0%BB%D1%83%2C+%D0%BA%D1%80%D0%B0%D0%B6%D0%B0+%D0%BF%D1%80%D0%BE%D0%B8%D1%81%D1%85%D0%BE%D0%B4%D0%B8%D1%82+%D1%81%D1%80%D0%B5%D0%B4%D1%8C+%D0%B1%D0%B5%D0%BB%D0%B0+%D0%B4%D0%BD%D1%8F+%D0%B8%D0%B7+%D1%82%D1%89%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE+%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D1%8F%D0%B5%D0%BC%D0%BE%D0%B3%D0%BE+%D0%BC%D1%83%D0%B7%D0%B5%D1%8F+%D0%BD%D0%B0+%D0%9C%D0%B0%D0%BD%D1%85%D1%8D%D1%82%D1%82%D0%B5%D0%BD%D0%B5.+%D0%98%D0%BC%D0%B5%D0%BD%D0%BD%D0%BE+%D0%BF%D0%BE%D1%8D%D1%82%D0%BE%D0%BC%D1%83+%D1%81%D0%BE%D0%B1%D0%BB%D0%B0%D0%B7%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9+%D0%B6%D0%B5%D0%BD%D1%89%D0%B8%D0%BD%D0%B5+%26mdash%3B+%D0%B8%D0%BD%D1%81%D0%BF%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D1%83+%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%BE%D0%B2%D0%BE%D0%B9+%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8+%D0%9A%D1%8D%D1%82%D1%80%D0%B8%D0%BD+%D0%91%D1%8D%D0%BD%D0%BD%D0%B8%D0%BD%D0%B3%2C+%D0%BF%D1%80%D0%B8%D1%81%D1%82%D1%83%D0%BF%D0%B8%D0%B2%D1%88%D0%B5%D0%B9+%D0%BA+%D1%80%D0%BE%D0%B7%D1%8B%D1%81%D0%BA%D1%83+%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F+%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B0%2C+%D0%BF%D1%80%D0%B8%D1%85%D0%BE%D0%B4%D0%B8%D1%82%D1%81%D1%8F+%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D1%8C+%D0%B2%D1%81%D0%B5+%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D1%8B%D0%B5+%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%D0%B0+%26mdash%3B+%D0%BE%D1%82+%D1%81%D1%8B%D1%81%D0%BA%D0%BD%D0%BE%D0%B3%D0%BE+%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D0%B0%2C+%D1%85%D0%B8%D1%82%D1%80%D0%BE%D1%81%D1%82%D0%B8+%D0%B8+%D0%B0%D0%B2%D0%B0%D0%BD%D1%82%D1%8E%D1%80%D0%B8%D0%B7%D0%BC%D0%B0+%D0%B4%D0%BE+%D0%BB%D0%B8%D1%87%D0%BD%D0%BE%D0%B9+%D0%BF%D1%80%D0%B8%D0%B2%D0%BB%D0%B5%D0%BA%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8.+%D0%A7%D0%B5%D0%BC+%D0%B4%D0%B0%D0%BB%D1%8C%D1%88%D0%B5+%D0%BE%D0%BD%D0%B0+%D0%B8%D1%81%D0%BA%D1%83%D1%81%D0%BD%D0%BE+%D0%B7%D0%B0%D0%BC%D0%B0%D0%BD%D0%B8%D0%B2%D0%B0%D0%B5%D1%82+%D0%9A%D1%80%D0%B0%D1%83%D0%BD%D0%B0+%D0%B2+%D1%80%D0%B8%D1%81%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%83%D1%8E+%D0%B8%D0%B3%D1%80%D1%83%2C+%D1%82%D0%B5%D0%BC+%D0%B1%D0%BB%D0%B8%D0%B6%D0%B5+%D0%BE%D0%BD+%D0%BF%D0%BE%D0%B4%D1%85%D0%BE%D0%B4%D0%B8%D1%82+%D0%BA+%D1%80%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%BC%D1%83+%D0%BF%D0%BE%D0%B2%D0%BE%D1%80%D0%BE%D1%82%D1%83+%D1%81%D0%B2%D0%BE%D0%B5%D0%B9+%D1%81%D1%83%D0%B4%D1%8C%D0%B1%D1%8B.</p>%20<a%20href=http://filmz.ru/film/17/>%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%B5%D0%B5+%D0%BE+%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%D0%B5</a>&subject=Filmz.ru:%20%D0%90%D1%84%D0%B5%D1%80%D0%B0+%D0%A2%D0%BE%D0%BC%D0%B0%D1%81%D0%B0+%D0%9A%D1%80%D0%B0%D1%83%D0%BD%D0%B0'><span class="icon32x5 ljsin" title="LiveJournal"></span></a>
-        <a target=_blank nofollow  href='http://twitter.com/share?url=http://filmz.ru/film/17/&amp;via=filmzru&amp;text=%D0%90%D1%84%D0%B5%D1%80%D0%B0+%D0%A2%D0%BE%D0%BC%D0%B0%D1%81%D0%B0+%D0%9A%D1%80%D0%B0%D1%83%D0%BD%D0%B0'><span class="icon32x5 twisin" title="в twitter"></span></a>
+        <a href='#' nofollow onclick="javascript:window.open('http://vkontakte.ru/share.php?url=http://filmz.ru/film/18/',null,'height=650,width=640,status=yes,toolbar=no,menubar=no,location=no, resizable=yes, scrollbars=yes '); return false;"><span class="icon32x5 vksin" title="ВКонтакте"></span></a>
+        <a target="_blank" nofollow  href="http://connect.mail.ru/share?share_url=http://filmz.ru/film/18/"><span class="icon32x5 mmmsin" title="В Мой Мир"></span></a>
+        <a href='#' nofollow  onclick="javascript:window.open('http://www.facebook.com/sharer.php?u=http://filmz.ru/film/18/',null,'height=650,width=640,status=yes,toolbar=no,menubar=no,location=no, resizable=yes, scrollbars=yes '); return false;"><span class="icon32x5 facesin" title="в facebook"></span></a>
+	<a target=_blank nofollow href='http://www.livejournal.com/update.bml?event=<img%20align=left%20hspace=10%20vspace=10%20src="http://media.filmz.ru/photos/small/s_138505.jpg"><p>%D0%90%D0%BD%D0%BD%D0%B0+%D0%A1%D0%BA%D0%BE%D1%82%D1%82+%26mdash%3B+%D1%81%D0%B0%D0%BC%D0%B0%D1%8F+%D0%B7%D0%BD%D0%B0%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D0%B0%D1%8F+%D0%BA%D0%B8%D0%BD%D0%BE%D0%B7%D0%B2%D0%B5%D0%B7%D0%B4%D0%B0+%D0%B2+%D0%BC%D0%B8%D1%80%D0%B5.+%D0%9E%D0%BD%D0%B0+%D0%B6%D0%B8%D0%B2%D0%B5%D1%82+%D0%B2+%D0%91%D0%B5%D0%B2%D0%B5%D1%80%D0%BB%D0%B8-%D0%A5%D0%B8%D0%BB%D0%BB%D0%B7%2C+%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B0%D0%B5%D1%82+%D1%83%D0%BC%D0%BE%D0%BF%D0%BE%D0%BC%D1%80%D0%B0%D1%87%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5+%D0%B3%D0%BE%D0%BD%D0%BE%D1%80%D0%B0%D1%80%D1%8B+%D0%B8+%D1%87%D0%B0%D1%81%D1%82%D0%BE+%D0%B4%D0%B5%D0%BC%D0%BE%D0%BD%D1%81%D1%82%D1%80%D0%B8%D1%80%D1%83%D0%B5%D1%82+%D0%B2%D1%81%D0%BF%D1%8B%D1%88%D0%BA%D0%B8+%D1%82%D0%B5%D0%BC%D0%BF%D0%B5%D1%80%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%2C+%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%BC%D0%B8+%D0%BF%D1%80%D0%B8%D0%BA%D1%80%D1%8B%D0%B2%D0%B0%D0%B5%D1%82+%D1%81%D0%B2%D0%BE%D0%B8+%D0%BF%D0%B5%D1%80%D0%B5%D0%B6%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F+%D0%BF%D0%BE+%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83+%D0%BF%D1%80%D0%B5%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9+%D1%82%D0%B0%D0%B1%D0%BB%D0%BE%D0%B8%D0%B4%D0%BD%D0%BE%D0%B9+%D0%BF%D1%80%D0%B5%D1%81%D1%81%D1%8B%2C+%D1%80%D0%B5%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D0%B8%2C+%D0%B4%D1%80%D1%83%D0%B6%D0%BA%D0%B0+%D0%B8+%D0%BD%D0%B5%D1%83%D0%B2%D0%B5%D1%80%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8+%D0%B2+%D1%81%D0%B5%D0%B1%D0%B5...+%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%BE+%D0%B7%D0%B0%D0%B9%D0%B4%D1%8F+%D0%B2+%D0%BA%D0%BD%D0%B8%D0%B6%D0%BD%D1%8B%D0%B9+%D0%BC%D0%B0%D0%B3%D0%B0%D0%B7%D0%B8%D0%BD%2C+%D0%BE%D0%BD%D0%B0+%D0%B2%D0%BB%D1%8E%D0%B1%D0%BB%D1%8F%D0%B5%D1%82%D1%81%D1%8F+%D0%B2+%D0%BD%D0%B5%D1%83%D0%B4%D0%B0%D1%87%D0%BB%D0%B8%D0%B2%D0%BE%D0%B3%D0%BE+%D1%82%D0%BE%D1%80%D0%B3%D0%BE%D0%B2%D1%86%D0%B0+%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0%D0%BC%D0%B8+%D0%BF%D0%BE+%D1%82%D1%83%D1%80%D0%B8%D0%B7%D0%BC%D1%83+%D0%A3%D0%B8%D0%BB%D1%8C%D1%8F%D0%BC%D0%B0+%D0%A2%D0%B0%D0%BA%D0%B5%D1%80%D0%B0.</p>%20<a%20href=http://filmz.ru/film/18/>%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%B5%D0%B5+%D0%BE+%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%D0%B5</a>&subject=Filmz.ru:%20%D0%9D%D0%BE%D1%82%D1%82%D0%B8%D0%BD%D0%B3+%D0%A5%D0%B8%D0%BB%D0%BB'><span class="icon32x5 ljsin" title="LiveJournal"></span></a>
+        <a target=_blank nofollow  href='http://twitter.com/share?url=http://filmz.ru/film/18/&amp;via=filmzru&amp;text=%D0%9D%D0%BE%D1%82%D1%82%D0%B8%D0%BD%D0%B3+%D0%A5%D0%B8%D0%BB%D0%BB'><span class="icon32x5 twisin" title="в twitter"></span></a>
 	<div class="clear"></div>
 	</div>
 	<div class="clear"></div>
@@ -600,7 +602,7 @@ function responseDeleteMyFilmNote(result){
 <div class="quota flr br5 mr10">
 	<!-- div class="item">
 
-средн. оценка <span class="red" itemprop="ratingValue">3.78</span> из <span itemprop="bestRating">5</span><br><a title="оценки зрителей фильма Афера Томаса Крауна" href="/film/17/users_see/">всего оценок</a> <span itemprop="ratingCount" content="26" style="color: #a34d36;">26</span> 
+средн. оценка <span class="red" itemprop="ratingValue">3.69</span> из <span itemprop="bestRating">5</span><br><a title="оценки зрителей фильма Ноттинг Хилл" href="/film/18/users_see/">всего оценок</a> <span itemprop="ratingCount" content="28" style="color: #a34d36;">28</span> 
 
 </div -->
 
@@ -624,39 +626,6 @@ function responseDeleteMyFilmNote(result){
 
 
 	
-
-
-
-
-	
-	
-	
-	
-	
-
-
-
-
-
-
-<div class="inform br5">
-
-<h2>читайте также</h2>
-
-	<ul class="release3col">
-	                                               
-	<li class="first">
-		<span class="name">26.10.2012</span>
-		<span class="item"><a title="новости о фильме Афера Томаса Крауна: Как украсть миллион, или 10 ограблений, которые вас не разочаруют" href="/pub/73/26560_1.htm">Как украсть миллион, или 10 ограблений, которые вас не разочаруют</a></span>
-	</li>
-
-		</div>
-                 
-
-
-
-
-
 
 
 
@@ -729,7 +698,7 @@ function responseDeleteMyFilmNote(result){
 		</li>
 	</a -->
 
-	<img alt="фильм Афера Томаса Крауна" title="фильм Афера Томаса Крауна" class="br5 ml10 mt10 mb10 mr10 flr" src="http://media.filmz.ru/photos/small/filmz.ru_s_31968.jpg" itemprop="image">
+	<img alt="фильм Ноттинг Хилл" title="фильм Ноттинг Хилл" class="br5 ml10 mt10 mb10 mr10 flr" src="http://media.filmz.ru/photos/small/filmz.ru_s_138505.jpg" itemprop="image">
 	
 
 
@@ -737,13 +706,13 @@ function responseDeleteMyFilmNote(result){
 	<div style="padding:20px 8px 8px 20px; width:114px; font-size:10px; text-align:right;" class="fll">
 
 			
-				 США
+				 США, Великобритания
 			
 				<div class="mt10 line"></div>
 
 
 			
-				<span itemprop="genre">криминальный, романтический, триллер</span>
+				<span itemprop="genre">комедия, романтический</span>
 				<div class="mt10 line"></div>
 						
 						
@@ -751,7 +720,7 @@ function responseDeleteMyFilmNote(result){
 						
 						
 			
-		<b>R</b>
+		<b>PG-13</b>
 			<div class="mt10 line"></div>
 				
 
@@ -777,15 +746,15 @@ function responseDeleteMyFilmNote(result){
 	{
 		current_mark=vote;
 		film_mark_onout();
-		$.get('/films/vote.php?id=17&vote='+vote, function(data){
+		$.get('/films/vote.php?id=18&vote='+vote, function(data){
 		if(voted==false){
 		document.getElementById('siterate_count_value').innerHTML=document.getElementById('siterate_count_value').innerHTML*1+1;
 		voted=true;
 		}
 		$('#film-after-vote-window').modal({});
-		voted_film_title='Я оцениваю фильм "Афера Томаса Крауна" на '+vote+' из 5';
-		voted_film_link='http://www.filmz.ru/film/17/';
-		voted_film_image='http://media.filmz.ru/photos/small/filmz.ru_s_31968.jpg';
+		voted_film_title='Я оцениваю фильм "Ноттинг Хилл" на '+vote+' из 5';
+		voted_film_link='http://www.filmz.ru/film/18/';
+		voted_film_image='http://media.filmz.ru/photos/small/filmz.ru_s_138505.jpg';
 		});
 	}
 
@@ -819,13 +788,13 @@ function responseDeleteMyFilmNote(result){
 <div style="display: block; float: left; width: 100%; height: 60px; text-align: center; ">
 	<div class="fs7 grey" style="line-height: 100%;  padding: 5px 0;">оценка<br>зрителей</div>
 	<div itemprop="ratingValue" style="color:  #a34d36; font-size: 18pt;">
-		3.78
+		3.69
 	</div>
 </div>
 </div>
 
 
-<center><a title="оценки зрителей фильма Афера Томаса Крауна" href="/film/17/users_see/">всего оценок</a> <span itemprop="ratingCount" content="26" style="color: #a34d36;" id="siterate_count_value">26</span> </center>
+<center><a title="оценки зрителей фильма Ноттинг Хилл" href="/film/18/users_see/">всего оценок</a> <span itemprop="ratingCount" content="28" style="color: #a34d36;" id="siterate_count_value">28</span> </center>
 
 
 
@@ -836,14 +805,14 @@ function responseDeleteMyFilmNote(result){
 
 <div class="mt10 line clear"></div>
 
-<div class="item fll ml10"><span title="этот фильм смотрели 32 человека" class="itemicon20 mt5 mr5 fll whatchicon"></span>
- <span class="tags"><a href="/film/17/users_see/">32 человека </span></a></span> | 
+<div class="item fll ml10"><span title="этот фильм смотрели 36 человек" class="itemicon20 mt5 mr5 fll whatchicon"></span>
+ <span class="tags"><a href="/film/18/users_see/">36 человек </span></a></span> | 
 
-<span class="item tags" id="user_see_film_17">
+<span class="item tags" id="user_see_film_18">
 <script type="text/javascript">function user_see_film_delete(id){ajaxGETRequest('/films/vote_see_film.php', 'delete=1&id='+ id, function(result){document.getElementById("user_see_film_" + id).innerHTML='Вы не смотрели данный фильм!';});}</script>
 <script type="text/javascript">function user_see_film_add(id){ajaxGETRequest('/films/vote_see_film.php', 'id='+ id +'&film_table=films', function(result){if(result=='ok'){document.getElementById('rating_title').innerHTML='Оцените фильм'; document.getElementById("user_see_film_" + id).innerHTML='Вы смотрели данный фильм!';}else if(result=='repeat'){document.getElementById("user_see_film_" + id).innerHTML='Вы смотрели данный фильм!';alert('Вы уже добавили фильм в список просмотренных!');}else if(result=='no_auth'){alert('Необходимо авторизоваться!');}else alert('Ошибка: '.result);});}</script>
 
-		<a href="#" style="text-decoration: none;border-bottom: 1px dashed blue;" onclick="user_see_film_add(17);return false;">Отметить, что смотрели фильм!</a>
+		<a href="#" style="text-decoration: none;border-bottom: 1px dashed blue;" onclick="user_see_film_add(18);return false;">Отметить, что смотрели фильм!</a>
 		
 
 </div>
@@ -852,28 +821,28 @@ function responseDeleteMyFilmNote(result){
 	<ul class="listing invert">
 		<li class="first">
 		<span class="itemicon20 mainicon ml30 fll"></span>
-		<span class="item"><a title="о фильме Афера Томаса Крауна" href="/film/17/">о фильме</a></span>
+		<span class="item"><a title="о фильме Ноттинг Хилл" href="/film/18/">о фильме</a></span>
 		</li>
 		<li>
 		<span class="itemicon20 mainicon ml30 fll"></span>
-		<span class="item"><a title="актеры и съемочная группа фильма Афера Томаса Крауна" href="/film/17/people/">актеры и съемочная группа</a></span>
+		<span class="item"><a title="актеры и съемочная группа фильма Ноттинг Хилл" href="/film/18/people/">актеры и съемочная группа</a></span>
 		</li>
 								<li>
 		<span class="itemicon20 videoicon ml30 fll"></span>
-		<span class="number">2</span>
-		<span class="item"><a title="видео, трейлеры фильма Афера Томаса Крауна" href="/videos/films/17/">видео, трейлеры</a></span>
+		<span class="number">3</span>
+		<span class="item"><a title="видео, трейлеры фильма Ноттинг Хилл" href="/videos/films/18/">видео, трейлеры</a></span>
 		</li>
 			
 					<li>
 		<span class="itemicon20 photoicon ml30 fll"></span>
-		<span class="number">18</span>
-		<span class="item"><a title="кадры из фильма Афера Томаса Крауна" href="/photos/films/17/photos/">кадры</a></span>
+		<span class="number">24</span>
+		<span class="item"><a title="кадры из фильма Ноттинг Хилл" href="/photos/films/18/photos/">кадры</a></span>
 		</li>
 			
 					<li>
 		<span class="itemicon20 postericon ml30 fll"></span>
-		<span class="number">1</span>
-		<span class="item"><a title="постеры фильма Афера Томаса Крауна" href="/photos/films/17/posters/">постеры</a></span>
+		<span class="number">3</span>
+		<span class="item"><a title="постеры фильма Ноттинг Хилл" href="/photos/films/18/posters/">постеры</a></span>
 		</li>
 			
 			
@@ -881,18 +850,13 @@ function responseDeleteMyFilmNote(result){
 			
 				<li>
 		<span class="itemicon20 boxxicon ml30 fll"></span>
-		<span class="item"><a title="кассовые сборы фильма Афера Томаса Крауна"  href="/film/17/boxoffice/">кассовые сборы</a></span>
+		<span class="item"><a title="кассовые сборы фильма Ноттинг Хилл"  href="/film/18/boxoffice/">кассовые сборы</a></span>
 		</li>
 		
 						
 
 	</ul>
 
-				<ul class="release1col">
-		<li class="last">
-		<div class="tags">альтернативные названия: Афёра Томаса Крауна</div>
-		</li>
-		</ul>
 				
 		
 		
@@ -946,7 +910,7 @@ function responseDeleteMyFilmNote(result){
    if (document.context) document.write ("&context=" + escape(document.context));
    if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
    document.write ("'><\/scr"+"ipt>");
-//]]>--></script><noscript><a href='http://b.filmz.ru/presentation/www/delivery/ck.php?n=a52dc5ec&amp;cb=59' target='_blank'><img src='http://b.filmz.ru/presentation/www/delivery/avw.php?zoneid=3&amp;cb=45&amp;n=a52dc5ec' border='0' alt='' /></a></noscript>
+//]]>--></script><noscript><a href='http://b.filmz.ru/presentation/www/delivery/ck.php?n=a52dc5ec&amp;cb=47' target='_blank'><img src='http://b.filmz.ru/presentation/www/delivery/avw.php?zoneid=3&amp;cb=53&amp;n=a52dc5ec' border='0' alt='' /></a></noscript>
 </div>
 
 	<div class="inform br5">
@@ -974,25 +938,13 @@ function responseDeleteMyFilmNote(result){
 
 
 	<ul class="listing invert">
-		<li class="first"><span class="item"><a title="Официальный сайт фильма Афера Томаса Крауна" href="http://www.mgm.com/title_title.php?title_star=THOMASCA" target=_blank>Официальный сайт</a></span></li>										<li><span class="item"><a title="страница фильма Афера Томаса Крауна на IMDb" href=http://www.imdb.com/title/tt0155267/ target=_blank>страница на IMDb</a></span></li>		<li><span class="item"><a title="страница фильма Афера Томаса Крауна на boxofficemojo.com" href="http://boxofficemojo.com/movies/?id=thomascrownaffair.htm" target=_blank>страница на Box Office Mojo</a></span></li>			</li>
+		<li class="first"><span class="item"><a title="Официальный сайт фильма Ноттинг Хилл" href="http://www.notting-hill.com/" target=_blank>Официальный сайт</a></span></li>										<li><span class="item"><a title="страница фильма Ноттинг Хилл на IMDb" href=http://www.imdb.com/title/tt0125439/ target=_blank>страница на IMDb</a></span></li>		<li><span class="item"><a title="страница фильма Ноттинг Хилл на boxofficemojo.com" href="http://boxofficemojo.com/movies/?id=nottinghill.htm" target=_blank>страница на Box Office Mojo</a></span></li>			</li>
 	</ul>
 
 </div>
 
 
 
-
-
-<div class="inform br5">
-
-<h2>в этой серии</h2>
-	<ul class="release3col">
-		<li class="first">
-		<span class="name">1968</span>
-		<span class="item"><a title="фильм Афера Томаса Крауна" href="/film/8440/">Афера Томаса Крауна</a></span>
-		</li>
-	</ul>
-</div>
 
 
 
@@ -1132,7 +1084,7 @@ function responseDeleteMyFilmNote(result){
    if (document.context) document.write ("&context=" + escape(document.context));
    if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
    document.write ("'><\/scr"+"ipt>");
-//]]>--></script><noscript><a href='http://b.filmz.ru/presentation/www/delivery/ck.php?n=a52dc5ec&amp;cb=81' target='_blank'><img src='http://b.filmz.ru/presentation/www/delivery/avw.php?zoneid=3&amp;cb=68&amp;n=a52dc5ec' border='0' alt='' /></a></noscript>
+//]]>--></script><noscript><a href='http://b.filmz.ru/presentation/www/delivery/ck.php?n=a52dc5ec&amp;cb=86' target='_blank'><img src='http://b.filmz.ru/presentation/www/delivery/avw.php?zoneid=3&amp;cb=39&amp;n=a52dc5ec' border='0' alt='' /></a></noscript>
 </div>
 
 	<div class="inform br5">
@@ -1184,35 +1136,35 @@ function responseDeleteMyFilmNote(result){
 		<a title="Разлом Сан-Андреас Трейлер №2" href="/videos/31500/" alt="Разлом Сан-Андреас Трейлер №2" style="background:url(http://media.filmz.ru/players/img_31500.jpg) top center no-repeat; background-size:cover; height:172px;" class="dbl videoimg"></a>
 	<div class="place fll mr10 ml10">1</div>
 	<div class="header fll" style="width:220px;"><a href="/videos/31500/">Разлом Сан-Андреас</a> <div class="distrib fs8 sser"><i>Трейлер №2</i></div></div>
-	<div class="numbers fs10 sser mr10" style="text-align:right;"><b>1214</b></div>
+	<div class="numbers fs10 sser mr10" style="text-align:right;"><b>1208</b></div>
 	<div class="clr"></div>
         </li>
 				<li class="boxoff lcb">
 		<a title="Монстры на каникулах 2 Тизер" href="/videos/31553/" alt="Монстры на каникулах 2 Тизер" style="background:url(http://media.filmz.ru/players/img_31553.jpg) top center no-repeat; background-size:cover; height:172px;" class="dbl videoimg"></a>
 	<div class="place fll mr10 ml10">2</div>
 	<div class="header fll" style="width:220px;"><a href="/videos/31553/">Монстры на каникулах 2</a> <div class="distrib fs8 sser"><i>Тизер</i></div></div>
-	<div class="numbers fs10 sser mr10" style="text-align:right;"><b>1025</b></div>
+	<div class="numbers fs10 sser mr10" style="text-align:right;"><b>1013</b></div>
 	<div class="clr"></div>
         </li>
 				<li class="boxoff lcb">
 		<a title="Сорвиголова* Трейлер №2" href="/videos/31509/" alt="Сорвиголова* Трейлер №2" style="background:url(http://media.filmz.ru/players/img_31509.jpg) top center no-repeat; background-size:cover; height:172px;" class="dbl videoimg"></a>
 	<div class="place fll mr10 ml10">3</div>
 	<div class="header fll" style="width:220px;"><a href="/videos/31509/">Сорвиголова*</a> <div class="distrib fs8 sser"><i>Трейлер №2</i></div></div>
-	<div class="numbers fs10 sser mr10" style="text-align:right;"><b>1015</b></div>
+	<div class="numbers fs10 sser mr10" style="text-align:right;"><b>1005</b></div>
 	<div class="clr"></div>
         </li>
 				<li class="boxoff lcb">
 		<a title="Форсаж 7 Международный трейлер №2" href="/videos/31558/" alt="Форсаж 7 Международный трейлер №2" style="background:url(http://media.filmz.ru/players/img_31558.jpg) top center no-repeat; background-size:cover; height:172px;" class="dbl videoimg"></a>
 	<div class="place fll mr10 ml10">4</div>
 	<div class="header fll" style="width:220px;"><a href="/videos/31558/">Форсаж 7</a> <div class="distrib fs8 sser"><i>Международный трейлер №2</i></div></div>
-	<div class="numbers fs10 sser mr10" style="text-align:right;"><b>751</b></div>
+	<div class="numbers fs10 sser mr10" style="text-align:right;"><b>719</b></div>
 	<div class="clr"></div>
         </li>
 				<li class="boxoff lcb">
 		<a title="Мстители: Эра Альтрона Кросс-промо с Moments Worth Paying For" href="/videos/31551/" alt="Мстители: Эра Альтрона Кросс-промо с Moments Worth Paying For" style="background:url(http://media.filmz.ru/players/img_31551.jpg) top center no-repeat; background-size:cover; height:172px;" class="dbl videoimg"></a>
 	<div class="place fll mr10 ml10">5</div>
 	<div class="header fll" style="width:220px;"><a href="/videos/31551/">Мстители: Эра Альтрона</a> <div class="distrib fs8 sser"><i>Кросс-промо с Moments Worth Paying For</i></div></div>
-	<div class="numbers fs10 sser mr10" style="text-align:right;"><b>629</b></div>
+	<div class="numbers fs10 sser mr10" style="text-align:right;"><b>622</b></div>
 	<div class="clr"></div>
         </li>
 				</ul>
@@ -1309,7 +1261,7 @@ function responseDeleteMyFilmNote(result){
    if (document.context) document.write ("&context=" + escape(document.context));
    if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
    document.write ("'><\/scr"+"ipt>");
-//]]>--></script><noscript><a href='http://b.filmz.ru/presentation/www/delivery/ck.php?n=ace07b73&amp;cb=47' target='_blank'><img src='http://b.filmz.ru/presentation/www/delivery/avw.php?zoneid=4&amp;cb=74&amp;n=ace07b73' border='0' alt='' /></a></noscript>
+//]]>--></script><noscript><a href='http://b.filmz.ru/presentation/www/delivery/ck.php?n=ace07b73&amp;cb=20' target='_blank'><img src='http://b.filmz.ru/presentation/www/delivery/avw.php?zoneid=4&amp;cb=63&amp;n=ace07b73' border='0' alt='' /></a></noscript>
 
 <!--/* OpenX Interstitial or Floating DHTML Tag v2.8.8 */-->
 
@@ -1338,7 +1290,7 @@ function responseDeleteMyFilmNote(result){
    if (document.context) document.write ("&context=" + escape(document.context));
    if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
    document.write ("'><\/scr"+"ipt>");
-//]]>--></script><noscript><a href='http://b.filmz.ru/presentation/www/delivery/ck.php?n=ace07b73&amp;cb=46' target='_blank'><img src='http://b.filmz.ru/presentation/www/delivery/avw.php?zoneid=10&amp;cb=86&amp;n=ace07b73' border='0' alt='' /></a></noscript></center>
+//]]>--></script><noscript><a href='http://b.filmz.ru/presentation/www/delivery/ck.php?n=ace07b73&amp;cb=94' target='_blank'><img src='http://b.filmz.ru/presentation/www/delivery/avw.php?zoneid=10&amp;cb=20&amp;n=ace07b73' border='0' alt='' /></a></noscript></center>
 		</div>
 
 
@@ -1700,7 +1652,7 @@ xmlhttp.onreadystatechange = function() {
      <h1>Пожалуйста, авторизуйтесь.</h1>
      <p>Выполнение данного действия требует авторизации на сайте.</p>
 	 <p style="font-size:12px !important;"><form action="/moviegoers/login/login.html?mode=ajax" method="POST" target="logframe">
-                        <input type="hidden" name="url" value="/film/17/">
+                        <input type="hidden" name="url" value="/film/18/">
 				<input type="text" name="email" style="padding:5px; width:90px;" аutocomplete="off" value="" placeholder="Ваш e-mail">&nbsp;<input
 					type="password" name="password" style="padding:5px; width: 70px;" аutocomplete="off" value="" placeholder="пароль">&nbsp;<input type="submit" class="buttonstyle" value="Войти">
 				<a style="margin-left:5px;font-size:12px !important;" rel="nofollow" href="/moviegoers/registration/">Регистрация</a> | <a style="font-size:12px !important;" rel="nofollow" href="/moviegoers/password/">Забыли пароль?</a>
@@ -1768,7 +1720,7 @@ xmlhttp.onreadystatechange = function() {
 
 
 
-<!-- <script type="text/javascript" src="/js/p.js"></script> -->
+<!--  -->
 
 
 
@@ -1782,5 +1734,5 @@ xmlhttp.onreadystatechange = function() {
 </script>
 
 
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-2.newrelic.com","licenseKey":"cdbd811c73","applicationID":"3385091","transactionName":"YVQHbEVXW0QEBUNcXlgeMEpeGVNeCQsYXF9SVB0WR15F","queueTime":0,"applicationTime":213,"ttGuid":"","agentToken":"","atts":"TRMEGg1NSEo=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-476.min.js"}</script></body>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-2.newrelic.com","licenseKey":"cdbd811c73","applicationID":"3385091","transactionName":"YVQHbEVXW0QEBUNcXlgeMEpeGVNeCQsYXF9SVB0WR15F","queueTime":0,"applicationTime":221,"ttGuid":"","agentToken":"","atts":"TRMEGg1NSEo=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-476.min.js"}</script></body>
 </html>
