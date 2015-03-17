@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 
 def get_title(movie_id):
-    page_content = utils.get_page("http://www.filmz.ru/film/%s/" % movie_id)
+    page_content = utils.cached_get_page("http://www.filmz.ru/film/%s/" % movie_id)
     soup = BeautifulSoup(page_content)
     h1 = soup.h1
     span = h1.span
