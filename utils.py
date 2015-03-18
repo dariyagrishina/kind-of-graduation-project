@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import urllib
+import os
 import os.path
 
 
@@ -18,14 +19,16 @@ def get_file_name(url):
 
 def save(url, content):
     file_name = get_file_name(url)
-    cached_page = open("cached_pages/" + get_file_name(url), "w")
+    dir = os.path.dirname(__file__)
+    cached_page = open(os.path.join(dir, "cached_pages/" + get_file_name(url)), "w")
     cached_page.write(content.encode('utf8'))
     cached_page.close()
 
 
 def load(url):
     file_name = get_file_name(url)
-    cached_page = open("cached_pages/" + get_file_name(url), "r")
+    dir = os.path.dirname(__file__)
+    cached_page = open(os.path.join(dir, "cached_pages/" + get_file_name(url)), "r")
     content = cached_page.read()
     cached_page.close()
     return content.decode("utf8")
