@@ -10,7 +10,17 @@ def get_title(movie_id):
     soup = BeautifulSoup(page_content)
     h1 = soup.h1
     span = h1.span
-    return span.get_text()
+    text = span.get_text()
+    text_utf8 = text.encode('utf8')
+    return text_utf8
+
+#def get_year
+
+
+def get_info(movie_id):
+    film_info = {}
+    film_info["title"] = get_title(movie_id)
+    return film_info
 
 
 if len(sys.argv) < 2 or not all(arg.isdigit() for arg in sys.argv[1:]):
@@ -18,4 +28,4 @@ if len(sys.argv) < 2 or not all(arg.isdigit() for arg in sys.argv[1:]):
     sys.exit(1)
 
 for id in sys.argv[1:]:
-    print get_title(id)
+    print get_info(id)
