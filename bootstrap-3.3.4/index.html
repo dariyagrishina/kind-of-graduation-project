@@ -3,12 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- R: ты знаешь, что делает эта строчка? и хочешь ли ты её? -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- R: заполни уж теги, раз они есть -->
     <meta name="description" content="">
     <meta name="author" content="">
+    <!-- R: нет такого файла -->
     <link rel="icon" href="../../favicon.ico">
 
+    <!-- R: нужно подставить настоящее название -->
     <title>Starter Page</title>
 
     <!-- Bootstrap core CSS -->
@@ -34,6 +38,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+          <!-- R: если у ссылки не указан href, то это не ссылка.
+                  Пока ссылаться некуда обычно ставят href="#", что значит на пустую метку -->
           <a class="navbar-brand">Graduation project</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
@@ -49,8 +55,33 @@
     <div class="container">
       <div class="starter-template">
         <div class="row">
+          <!-- R: лучше указывать отступы в единицах не зависящих от плотности пикселей.
+                  Т.к. для обычного настольного монитора - это 90, для твоего ноута - 138,
+                  а на мобилах вообще, что попало твориться и используются виртуальные пикселы.
+
+                  Из независимых от разрешения чаще всего используют em - размер шрифта:
+
+                    padding-top: 6em;
+
+               R: также следует понимать, что указание стилей прямо в элементе,
+                  а не секции style или отдельном файле может запутывать код.
+                  Поэтому этим не стоит злоупотреблять.
+                  В данном случае это пока ок, даже если кто-то будет говорить обратное :)
+           -->
           <form class="form-inline" style ="padding-top: 100px;">
             <div class="form-group">
+              <!-- R: опять фиксированный размер в пикселях.
+                      В данном случае следовало использовать классы сетки:
+
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">...</div>
+                        </div>
+
+                      А также что-нибудь из классов размера инпутов (.input-lg?)
+              -->
+              <!-- R: почему email-то? копи-паста, копи-паста!
+                      И id ещё.
+              -->
               <input type="email" class="form-control" id="exampleInputEmail2" style="width: 376px;">
               <button type="submit" class="btn btn-default">Go!</button>
             </div>
@@ -58,10 +89,12 @@
         </div>
       </div>
     </div>
+    <!-- R: ни один из этих скриптов, на самом деле не используется -->
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- R: путь неправильный, как и в следующем скрипте -->
     <script src="../../dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
