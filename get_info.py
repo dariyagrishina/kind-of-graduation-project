@@ -8,37 +8,52 @@ from bs4 import BeautifulSoup
 
 def _get_title(soup):
     h1 = soup.h1
-    span = h1.span
-    return span.get_text()
+    if h1 != None:
+        span = h1.span
+        if span != None:
+            return span.get_text()
+        return None
+    return None
 
 
 def _get_year(soup):
     h1 = soup.h1
-    span = h1.find_all("span")
-    year_with_brackets = span[1].get_text()
-    return int(year_with_brackets.strip("()"))
+    if h1 != None:
+        span = h1.find_all("span")
+        if len(span) >= 2:
+            year_with_brackets = span[1].get_text()
+            return int(year_with_brackets.strip("()"))
+        return None
+    return None
 
 
 def _get_description(soup):
     descriptions = soup.findAll(itemprop="description")
-    # доделать после проектирования API
-    return descriptions[0].get_text()
+    if len(descriptions) >= 1:
+        return descriptions[0].get_text()
+    return None
 
 
 def _get_duration(soup):
     durations_with_text = soup.findAll(itemprop="runtime")
     if len(durations_with_text) > 0:
-        duration_with_text = durations_with_text[0].get_text() # после проектирования API доделать
+        duration_with_text = durations_with_text[0].get_text()
     else:
         i = soup.i
-        duration_with_text = i.get_text()
+        if i == None:
+            return None
+        else:
+            duration_with_text = i.get_text()
+
     return int(re.sub(r'[\D]', '', duration_with_text))
 
 
-def _get_genre(soup):
+def _get_genres(soup):
     genres = soup.findAll(itemprop="genre")
-    # доделать после проектирования API, если список будет пустой
-    return genres[0].get_text()
+    if len(genres) >= 1:
+        genres_unsplitted = genres[0].get_text()
+        return genres_unsplitted.split(", ")
+    return []
 
 
 def get_info(movie_id):
@@ -49,6 +64,5 @@ def get_info(movie_id):
         'year' : _get_year(soup),
         'description' : _get_description(soup),
         'duration' : _get_duration(soup),
-        'genre' :_get_genre(soup)
+        'genres' :_get_genres(soup)
     }
-
