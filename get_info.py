@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import sys
 import utils
 import re
 from bs4 import BeautifulSoup
@@ -44,17 +43,16 @@ def _get_duration(soup):
 def _get_genres(soup):
     genre = soup.find(itemprop="genre")
     if genre:
-        genre_string = genre.get_text()
-        return genre_string.split(", ")
+        return genre.get_text().split(", ")
 
 
 def get_info(movie_id):
     page_content = utils.cached_get_page("http://www.filmz.ru/film/%s/" % movie_id)
     soup = BeautifulSoup(page_content)
     return {
-        'title' : _get_title(soup),
-        'year' : _get_year(soup),
-        'description' : _get_description(soup),
-        'duration' : _get_duration(soup),
-        'genres' :_get_genres(soup)
+        'title': _get_title(soup),
+        'year': _get_year(soup),
+        'description': _get_description(soup),
+        'duration': _get_duration(soup),
+        'genres': _get_genres(soup)
     }
