@@ -6,6 +6,8 @@ import os.path
 
 def get_page(url):
     page = urllib.urlopen(url)
+    if page.getcode() != 200:
+        raise IOError('No page with url %s found' % url)
     # TODO: detect encoding
     content_cp1251 = page.read()
     content = content_cp1251.decode('cp1251')
