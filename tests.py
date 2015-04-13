@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import pytest
 import get_info
 
 
@@ -24,6 +25,10 @@ def test_get_info_exceptions():
     assert 150 <= len(matrix['description']) <= 250
     assert matrix['description'][:30] == u'Сказка о Снегурочке, внучке Де'
 
-    assert matrix['duration'] == None
+    assert matrix['duration'] is None
     assert matrix['genres'] == [u'сказка', u'фэнтези', u'семейный']
 
+
+def test_get_info_not_found():
+    with pytest.raises(IOError):
+        get_info.get_info(-1)
