@@ -1,7 +1,11 @@
 body {
   padding-top: 50px;
 }
-.starter-template {
-  padding: 40px 15px;
-  text-align: center;
+
+#search-form {
+    margin-top: 10em;
+}
+
+h4 {
+    margin-left: 1em;
 }
