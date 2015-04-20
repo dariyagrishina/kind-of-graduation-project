@@ -6,6 +6,10 @@ body {
     margin-top: 10em;
 }
 
-h4 {
-    margin-left: 0.4em;
+/* Align text with the one in table */
+#search-form input[type=text] {
+    padding-left: 7px; /* +1px border */
+}
+#search-status {
+    padding: 8px;
 }

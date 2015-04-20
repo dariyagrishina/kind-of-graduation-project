@@ -46,72 +46,66 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
+
           <form id="search-form">
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Search for...">
               <span class="input-group-btn">
                 <button type="submit" class="btn btn-default">Go!</button>
               </span>
-            </div><!-- /input-group -->
+            </div>
           </form>
-        </div><!-- /.col-lg-8 -->
-      </div>
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-          <h4><small>Вы искали "драма". Найдено 17 фильмов.</small></h4>
-        </div>
-      </div>
-       <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
+          <p id="search-status" class="text-muted">Вы искали "драма". Найдено 17 фильмов.</p>
+
           <table class="table table-striped">
             <thead>
               <tr>
                 <th>Название</th>
                 <th>Год</th>
-                <th>Занудность</th>
+                <th class="text-right">Занудность</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Матрица</td>
                 <td>1999</td>
-                <td>10 %</td>
+                <td class="text-right">10%</td>
               </tr>
               <tr>
                 <td>Люси</td>
                 <td>2014</td>
-                <td>11 %</td>
+                <td class="text-right">11%</td>
               </tr>
               <tr>
                 <td>Игра в имитацию</td>
                 <td>2014</td>
-                <td>8 %</td>
+                <td class="text-right">8%</td>
               </tr>
               <tr>
                 <td>Восхождение Юпитер</td>
                 <td>2015</td>
-                <td>10 %</td>
+                <td class="text-right">10%</td>
               </tr>
               <tr>
                 <td>Форсаж 7</td>
                 <td>2015</td>
-                <td>45 %</td>
+                <td class="text-right">45%</td>
               </tr>
             </tbody>
           </table>
+
+          <nav>
+            <ul class="pagination">
+              <li><a href="#">←</a></li>
+              <li class="active"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">→</a></li>
+            </ul>
+          </nav>
+
         </div>
-      </div>
-      <div class="col-lg-8 col-lg-offset-2 text-left">
-        <nav>
-          <ul class="pagination">
-            <li><a href="#">←</a></li>
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">→</a></li>
-          </ul>
-        </nav>
       </div>
     </div>
   </body>
