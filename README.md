@@ -16,7 +16,7 @@ We recommend using [virtualenv][].
 To start webserver run this:
 
 ```bash
-python hello.py
+python app.py
 ```
 
 Have fun.
