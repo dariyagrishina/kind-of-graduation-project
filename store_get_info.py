@@ -12,7 +12,8 @@ def _get_path(movie_id):
 
 def _save_info(movie_id, movies_data):
     with open(_get_path(movie_id), 'w') as f:
-        f.write(json.dumps(movies_data, ensure_ascii=False).encode('utf-8'))
+        f.write(json.dumps(movies_data, ensure_ascii=False).encode('utf-8')) # ensure_ascii=False is made just to prove
+                                                                             # that everything is OK
 
 
 def _load_info(movie_id):
