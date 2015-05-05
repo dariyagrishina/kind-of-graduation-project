@@ -5,10 +5,12 @@ from get_info import get_info
 
 
 def save_data():
-    hundred_films = map(get_info, range (1,))
+    movie_ids = range(1, 101)
+    hundred_movies = map(get_info, movie_ids)
+
     with open("100_movies_data.json", 'w') as f:
-        # R: ensure_ascii=False makes russian text humanreadable
-        f.write(json.dumps(hundred_films, ensure_ascii=False).encode('utf-8'))
+        # ensure_ascii=False makes russian text human-readable
+        f.write(json.dumps(hundred_movies, ensure_ascii=False).encode('utf-8'))
 
 
 def load_data():
