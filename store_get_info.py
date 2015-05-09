@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import json
-from get_info import get_info
+from get_info import get_movies_info
 
 
 def _get_path(movie_id):
@@ -25,6 +25,6 @@ def cached_get_info(movie_id):
     if os.path.isfile(_get_path(movie_id)):
         return _load_info(movie_id)
     else:
-        movies_data = get_info(movie_id)
+        movies_data = get_movies_info(movie_id)
         _save_info(movie_id, movies_data)
         return movies_data

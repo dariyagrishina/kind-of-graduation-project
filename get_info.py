@@ -46,7 +46,7 @@ def _get_genres(soup):
         return genre.get_text().split(", ")
 
 
-def get_info(movie_id):
+def get_movies_info(movie_id):
     page_content = utils.cached_get_page("http://www.filmz.ru/film/%s/" % movie_id)
     soup = BeautifulSoup(page_content)
     return {
