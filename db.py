@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import json
+import re
 from get_info import get_movies_info
 
 
@@ -18,21 +19,31 @@ def load_data():
         return json.load(f)
 
 
+def _search_item_matches(search_item, movie_info):
+    text = (movie_info["description"] or "") + " " + (movie_info["title"] or "") + " " + (str(movie_info["year"]) or "")
+    if movie_info['genres'] is not None:
+        for e in movie_info["genres"]:
+            text = text + " " + e
+    text_lowercase = text.lower()
+    text_list = re.findall('\w+', text_lowercase, flags=re.U)
+
+    search_item_unicode = search_item.decode('utf-8')
+    search_item_lowercase = search_item_unicode.lower()
+
+    if search_item_lowercase in text_list:
+        return True
+    return False
+
+
+def _movie_matches(search_query, movie_info):
+    search_query_list = search_query.split()
+    for search_item in search_query_list:
+        if not _search_item_matches(search_item, movie_info):
+            return False
+    return True
+
+
 def look_for_search_query(search_query):
     db = load_data()
-    search_query_list = search_query.split()
-    res = []
-    for movie_info in db:
-        search_status = 0
-        for value in movie_info.values():
-            for search_item in search_query_list:
-                if search_item.isdigit():
-                    if value is not None and int(search_item) == value:
-                        search_status = search_status + 1
-                else:
-                    if value is not None and not isinstance(value, int) and search_item in value:
-                        search_status = search_status + 1
-
-        if search_status >= len(search_query_list):
-            res.append(movie_info['title'])
-    return res
+    return [movie_info['title'] for movie_info in db
+                                if _movie_matches(search_query, movie_info)]
