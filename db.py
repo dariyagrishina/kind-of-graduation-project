@@ -18,26 +18,27 @@ def load_data():
     with open("100_movies_data.json") as f:
         return json.load(f)
 
+# convert unicode text to lowercase list without punctuation marks
+def _modify_text(text):
+    text_lowercase = text.lower()
+    text_list = re.findall('\w+', text_lowercase, flags=re.U)
+    return text_list
 
 def _search_item_matches(search_item, movie_info):
     text = (movie_info["description"] or "") + " " + (movie_info["title"] or "") + " " + (str(movie_info["year"]) or "")
     if movie_info['genres'] is not None:
         for e in movie_info["genres"]:
             text = text + " " + e
-    text_lowercase = text.lower()
-    text_list = re.findall('\w+', text_lowercase, flags=re.U)
+    modified_text = _modify_text(text)
 
-    search_item_unicode = search_item.decode('utf-8')
-    search_item_lowercase = search_item_unicode.lower()
-
-    if search_item_lowercase in text_list:
+    if search_item in modified_text:
         return True
     return False
 
 
 def _movie_matches(search_query, movie_info):
-    search_query_list = search_query.split()
-    for search_item in search_query_list:
+    modified_search_query = _modify_text(search_query)
+    for search_item in modified_search_query:
         if not _search_item_matches(search_item, movie_info):
             return False
     return True
@@ -45,5 +46,6 @@ def _movie_matches(search_query, movie_info):
 
 def look_for_search_query(search_query):
     db = load_data()
+    search_query_unicode = search_query.decode('utf-8')
     return [movie_info['title'] for movie_info in db
-                                if _movie_matches(search_query, movie_info)]
+                                if _movie_matches(search_query_unicode, movie_info)]
