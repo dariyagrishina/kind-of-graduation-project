@@ -14,12 +14,12 @@ MATRIX = {
 
 def test_movie_matches_item():
     # Test against each field
-    assert db._search_item_matches('матрица', MATRIX)
-    assert db._search_item_matches('нео', MATRIX)
-    assert db._search_item_matches('1999', MATRIX)
-    assert db._search_item_matches('фантастика', MATRIX)
+    assert db._movie_matches_item('матрица', MATRIX)
+    assert db._movie_matches_item('нео', MATRIX)
+    assert db._movie_matches_item('1999', MATRIX)
+    assert db._movie_matches_item('фантастика', MATRIX)
     # Test mismatch
-    assert not db._search_item_matches('баловство', MATRIX)
+    assert not db._movie_matches_item('баловство', MATRIX)
 
 
 def test_movie_matches():
