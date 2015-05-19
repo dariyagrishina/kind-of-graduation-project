@@ -56,3 +56,4 @@ target/
 cached_pages/*
 venv/*
 movies_data/*
+cache/*
