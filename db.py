@@ -20,7 +20,9 @@ def load_data():
 
 
 def _parse(text):
-    """convert unicode text to lowercase list without punctuation marks."""
+    """
+    Parses text into a list of lowercase alphanumeric tokens.
+    """
     text_lowercase = text.lower()
     tokens = re.findall('\w+', text_lowercase, flags=re.U)
     return tokens
@@ -48,7 +50,3 @@ def movie_search(search_query):
     db = load_data()
     return [movie_info for movie_info in db
                        if _movie_matches(search_query, movie_info)]
-
-
-def human_readable(data):
-    return json.dumps(data, ensure_ascii=False).encode('utf-8')

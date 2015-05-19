@@ -45,3 +45,10 @@ def cached_get_page(url):
         content = get_page(url)
         save(url, content)
         return content
+
+
+def human_readable(data):
+    """
+    An utility for print and REPL debugging complex data structures with embedded russian text.
+    """
+    return json.dumps(data, ensure_ascii=False).encode('utf-8')
