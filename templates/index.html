@@ -56,8 +56,11 @@
             </div>
           </form>
           {% if search_query %}
-          <p id="search-status" class="text-muted">Вы искали "{{search_query}}". Найдено 17 фильмов.</p>
-
+          {% if not movies %}
+          <p id="search-status" class="text-muted">Вы искали "{{search_query}}". Ни одного фильма не найдено.</p>
+          {% else %}
+          <p id="search-status" class="text-muted">Вы искали "{{search_query}}".
+          {{found}} {{number_of_movies}} {{inflected_movie}}.</p>
           <table class="table table-striped">
             <thead>
               <tr>
@@ -67,31 +70,13 @@
               </tr>
             </thead>
             <tbody>
+              {% for movie in movies %}
               <tr>
-                <td>Матрица</td>
-                <td>1999</td>
+                <td>{{ movie.title }}</td>
+                <td>{{ movie.year }}</td>
                 <td class="text-right">10%</td>
               </tr>
-              <tr>
-                <td>Люси</td>
-                <td>2014</td>
-                <td class="text-right">11%</td>
-              </tr>
-              <tr>
-                <td>Игра в имитацию</td>
-                <td>2014</td>
-                <td class="text-right">8%</td>
-              </tr>
-              <tr>
-                <td>Восхождение Юпитер</td>
-                <td>2015</td>
-                <td class="text-right">10%</td>
-              </tr>
-              <tr>
-                <td>Форсаж 7</td>
-                <td>2015</td>
-                <td class="text-right">45%</td>
-              </tr>
+              {% endfor %}
             </tbody>
           </table>
 
@@ -105,6 +90,7 @@
               <li><a href="#">→</a></li>
             </ul>
           </nav>
+          {% endif %}
           {% endif %}
         </div>
       </div>
