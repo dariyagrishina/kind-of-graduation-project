@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
 import json
-from utils import get_page
-from get_info import get_movies_info
 
 
 def _get_file_name(arg):

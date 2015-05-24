@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 import urllib
 import os
-import os.path
+import os.pat
+from cached_func import cached
 
 
 def get_page(url):
@@ -13,6 +14,9 @@ def get_page(url):
     content = content_cp1251.decode('cp1251')
     page.close()
     return content
+
+
+cached_get_page = cached(get_page)
 
 
 def human_readable(data):
