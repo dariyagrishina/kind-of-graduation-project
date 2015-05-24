@@ -2,7 +2,7 @@
 import re
 from bs4 import BeautifulSoup
 from cached_func import cached
-from utils import cached_get_page
+from utils import get_page
 
 
 def _get_title(soup):
@@ -47,8 +47,9 @@ def _get_genres(soup):
         return genre.get_text().split(", ")
 
 
+@cached
 def get_movies_info(movie_id):
-    page_content = cached_get_page("http://www.filmz.ru/film/%s/" % movie_id)
+    page_content = get_page("http://www.filmz.ru/film/%s/" % movie_id)
     soup = BeautifulSoup(page_content)
     return {
         'title': _get_title(soup),
@@ -57,7 +58,3 @@ def get_movies_info(movie_id):
         'duration': _get_duration(soup),
         'genres': _get_genres(soup)
     }
-
-
-cached_get_movies_info = cached(get_movies_info)
-

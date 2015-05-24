@@ -5,6 +5,7 @@ import os.pat
 from cached_func import cached
 
 
+@cached
 def get_page(url):
     page = urllib.urlopen(url)
     if page.getcode() != 200:
@@ -14,9 +15,6 @@ def get_page(url):
     content = content_cp1251.decode('cp1251')
     page.close()
     return content
-
-
-cached_get_page = cached(get_page)
 
 
 def human_readable(data):
