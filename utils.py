@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import urllib
-import os
-import os.pat
+import json
 from cached_func import cached
 
 
