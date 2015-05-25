@@ -57,10 +57,11 @@
           </form>
           {% if search_query %}
           {% if not movies %}
-          <p id="search-status" class="text-muted">Вы искали "{{search_query}}". Ни одного фильма не найдено.</p>
+          <p id="search-status" class="text-muted">Вы искали "{{ search_query }}". Ни одного фильма не найдено.</p>
           {% else %}
-          <p id="search-status" class="text-muted">Вы искали "{{search_query}}".
-          {{found}} {{number_of_movies}} {{inflected_movie}}.</p>
+          <p id="search-status" class="text-muted">Вы искали "{{ search_query }}".
+          {{ movies|count|plural('Найден', 'Найдено', 'Найдено') }} {{ movies|count }}
+          {{ movies|count|plural('фильм', 'фильма', 'фильмов') }}.</p>
           <table class="table table-striped">
             <thead>
               <tr>
