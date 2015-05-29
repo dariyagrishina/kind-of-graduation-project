@@ -11,7 +11,11 @@ def first_page():
     return render_template("index.html", search_query=search_query, movies=movies)
 
 
+# R: используй декоратор, чтобы зарегистрировать фильтр, так сразу будет видно,
+#    что ты делаешь, а не потом. Кроме того, можно избежать повторения имени.
 def plural_filter(number_of_movies, single, plural_1, plural_2):
+    # R: реализация корректная, но далеко не лучшая.
+    #    Чтобы получить цифры числа следует использовать деление на 10 с остатком.
     reversed_number = str(number_of_movies)[::-1]
     if reversed_number[0:1] == '1' and reversed_number[0:2] != "11":
         return single

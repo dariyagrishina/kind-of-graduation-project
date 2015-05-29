@@ -55,6 +55,8 @@
               </span>
             </div>
           </form>
+          {# R: используй отступы, чтобы показать структуру.
+                Иначе сложно сразу увидеть что находится в if'е. #}
           {% if search_query %}
           {% if not movies %}
           <p id="search-status" class="text-muted">Вы искали "{{ search_query }}". Ни одного фильма не найдено.</p>
@@ -81,6 +83,7 @@
             </tbody>
           </table>
 
+          {# R: или оживи, или убери #}
           <nav>
             <ul class="pagination">
               <li><a href="#">←</a></li>
